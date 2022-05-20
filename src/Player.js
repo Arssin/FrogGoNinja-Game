@@ -41,8 +41,28 @@ export const player = new Player()
 
 
 
-//Player Movement
+//Player Movementa
 
-window.addEventListener('keydown', () => {
-  console.log('keyDown')
+window.addEventListener('keydown', ({key}) => {
+  // console.log(event)
+  switch(key) {
+    case 'ArrowLeft':
+    case 'A':
+    case 'a': {
+      console.log('left')
+      break;
+    }
+    case 'ArrowRight':
+    case 'D':
+    case 'd': {
+      console.log('right')
+      break;
+    }
+    case 'ArrowUp':
+    case 'W':
+    case 'w' : {
+      console.log('up')
+      break;
+    }
+  }
 })
