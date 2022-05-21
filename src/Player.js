@@ -1,4 +1,7 @@
-import {context} from './index.js'
+import {context, canvas} from './index.js'
+
+
+const GRAVITY = 0.2
 
 class Player {
   constructor() {
@@ -13,13 +16,53 @@ class Player {
   this.width = 30;
   this.height = 30;
 }
+
+// Rysunek gracza
 draw(){
     context.fillStyle = 'red'
     context.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
+//Update pozycji gracza
+update(){
+  this.draw()
+  this.position.y += this.velocity.y
+  
+  //Grawitacja działa jeżeli jest w oknie canvasa
+  if(this.position.y + this.height + this.velocity.y <= canvas.height ){
+  this.velocity.y += GRAVITY 
+} else { 
+  this.velocity.y = 0
+}
+}
 }
 
 
 export const player = new Player()
 
 
+
+//Player Movementa
+
+window.addEventListener('keydown', ({key}) => {
+  // console.log(event)
+  switch(key) {
+    case 'ArrowLeft':
+    case 'A':
+    case 'a': {
+      console.log('left')
+      break;
+    }
+    case 'ArrowRight':
+    case 'D':
+    case 'd': {
+      console.log('right')
+      break;
+    }
+    case 'ArrowUp':
+    case 'W':
+    case 'w' : {
+      console.log('up')
+      break;
+    }
+  }
+})
