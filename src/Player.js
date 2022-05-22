@@ -39,10 +39,10 @@ update(){
 }
 
 class Platform {
-  constructor(){
+  constructor({x,y}){
     this.position = {
-      x: 800,
-      y: 1100,
+      x: x,
+      y: y,
     }
     this.width = 400
     this.height = 50
@@ -57,7 +57,8 @@ class Platform {
 
 
 export const player = new Player()
-export const platform = new Platform()
+export const platforms = [ new Platform({x: 300, y: 1100}), new Platform({x:1000, y: 1000})]
+
 
 export const keys = {
   right: {
@@ -86,8 +87,6 @@ setTimeout(kek , 1000)
 //Player Movement
 
 window.addEventListener('keydown', ({key}) => {
-  console.log('kek')
-  
   switch(key) {
     case 'ArrowLeft':
     case 'A':
@@ -137,9 +136,10 @@ window.addEventListener('keyup', ({key}) => {
     case 'w' : {
       console.log('up')
       player.velocity.y = 0
-
       break;
     }
   }
 })
+
+
 
