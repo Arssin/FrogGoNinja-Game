@@ -11,7 +11,7 @@ class Player {
   }
   this.velocity = {
     x: 0,
-    y: 1,
+    y: 0,
   }
   this.width = 30;
   this.height = 30;
@@ -26,6 +26,7 @@ draw(){
 update(){
   this.draw()
   this.position.y += this.velocity.y
+  this.position.x += this.velocity.x
   
   //Grawitacja działa jeżeli jest w oknie canvasa
   if(this.position.y + this.height + this.velocity.y <= canvas.height ){
@@ -38,31 +39,68 @@ update(){
 
 
 export const player = new Player()
+export const keys = {
+  right: {
+    pressed: false,
+  },
+  left: {
+    pressed: false
+  }
+}
 
 
 
 //Player Movementa
 
 window.addEventListener('keydown', ({key}) => {
-  // console.log(event)
   switch(key) {
     case 'ArrowLeft':
     case 'A':
     case 'a': {
       console.log('left')
+      keys.left.pressed = true
       break;
     }
     case 'ArrowRight':
     case 'D':
     case 'd': {
       console.log('right')
+      keys.right.pressed = true
       break;
     }
     case 'ArrowUp':
     case 'W':
     case 'w' : {
       console.log('up')
+      player.velocity.y -= 20
       break;
     }
   }
 })
+
+window.addEventListener('keyup', ({key}) => {
+  switch(key) {
+    case 'ArrowLeft':
+    case 'A':
+    case 'a': {
+      console.log('left')
+      keys.left.pressed = false
+      break;
+    }
+    case 'ArrowRight':
+    case 'D':
+    case 'd': {
+      console.log('right')
+      keys.right.pressed = false
+      break;
+    }
+    case 'ArrowUp':
+    case 'W':
+    case 'w' : {
+      console.log('up')
+      player.velocity.y = 0
+      break;
+    }
+  }
+})
+
