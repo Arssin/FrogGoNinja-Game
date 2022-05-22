@@ -1,4 +1,4 @@
-import {player,keys} from './Player.js'
+import {player,keys, platform} from './Player.js'
 import {context, canvas} from './index.js'
 
 
@@ -8,6 +8,7 @@ export function animation () {
   //Clear całego canvasa dzieki temu nie zostaje pozycja gracza
   context.clearRect(0, 0, canvas.width, canvas.height)
   player.update()
+	platform.draw()
   
   if(keys.right.pressed) {
 		player.velocity.x = 5;

@@ -34,12 +34,31 @@ update(){
   this.velocity.y += GRAVITY 
 } else { 
   this.velocity.y = 0
+  }
+ }
 }
-}
+
+class Platform {
+  constructor(){
+    this.position = {
+      x: 800,
+      y: 1100,
+    }
+    this.width = 200
+    this.height = 50
+  }
+
+  draw(){
+    context.fillStyle = 'blue'
+    context.fillRect(this.position.x, this.position.y,this.width,this.height)
+  }
+
 }
 
 
 export const player = new Player()
+export const platform = new Platform()
+
 export const keys = {
   right: {
     pressed: false,
@@ -56,9 +75,9 @@ export const keys = {
 }
 
 
-// player.velocity.y -= 20
 
-//Player Movementa
+
+//Player Movement
 
 window.addEventListener('keydown', ({key}) => {
   console.log('kek')
