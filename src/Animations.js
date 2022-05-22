@@ -17,4 +17,8 @@ export function animation () {
 	} else {
 		player.velocity.x *= 0.9;
 	}
+
+	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width >= platform.position.x ) {
+		player.velocity.y = 0
+	}
 }

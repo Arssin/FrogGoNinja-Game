@@ -6,8 +6,8 @@ const GRAVITY = 0.2
 class Player {
   constructor() {
     this.position = {
-      x: 100,
-      y: 100
+      x: 10,
+      y: 1200,
   }
   this.velocity = {
     x: 0,
@@ -44,7 +44,7 @@ class Platform {
       x: 800,
       y: 1100,
     }
-    this.width = 200
+    this.width = 400
     this.height = 50
   }
 
@@ -74,6 +74,12 @@ export const keys = {
   }
 }
 
+function jump(kek) {     
+   if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
+player.velocity.y -= 20
+setTimeout(kek , 1000)
+
+}
 
 
 
@@ -101,8 +107,7 @@ window.addEventListener('keydown', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
-      if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
-      player.velocity.y -= 20
+      jump()
       break;
     }
   }
