@@ -15,6 +15,7 @@ class Player {
   }
   this.width = 30;
   this.height = 30;
+
 }
 
 // Rysunek gracza
@@ -44,15 +45,24 @@ export const keys = {
     pressed: false,
   },
   left: {
-    pressed: false
+    pressed: false,
+  },
+  up: {
+    pressed: false,
+  },
+  jumping: {
+    pressed: true,
   }
 }
 
 
+// player.velocity.y -= 20
 
 //Player Movementa
 
 window.addEventListener('keydown', ({key}) => {
+  console.log('kek')
+  
   switch(key) {
     case 'ArrowLeft':
     case 'A':
@@ -72,13 +82,17 @@ window.addEventListener('keydown', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
+      if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
       player.velocity.y -= 20
       break;
     }
   }
 })
 
+
+
 window.addEventListener('keyup', ({key}) => {
+ 
   switch(key) {
     case 'ArrowLeft':
     case 'A':
@@ -99,6 +113,7 @@ window.addEventListener('keyup', ({key}) => {
     case 'w' : {
       console.log('up')
       player.velocity.y = 0
+
       break;
     }
   }
