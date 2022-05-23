@@ -1,0 +1,28 @@
+{
+  "name": "jumpinggame",
+  "version": "1.0.0",
+  "description": "New Game HTML canvas and JavaScript training",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arssin/JumpingGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arssin/JumpingGame/issues"
+  },
+  "homepage": "https://github.com/Arssin/JumpingGame#readme",
+  "devDependencies": {
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.6.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
