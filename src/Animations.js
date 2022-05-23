@@ -44,6 +44,7 @@ console.log(scrollOffset)
 	}
 })
 
+//Add win condition
 if (scrollOffset > 3000) {
 console.log('its a win') }
 }
