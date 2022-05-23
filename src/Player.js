@@ -1,5 +1,7 @@
 import {context, canvas} from './index.js'
+import blocks from './images/blocks.png'
 
+console.log(blocks)
 
 const GRAVITY = 0.2
 
