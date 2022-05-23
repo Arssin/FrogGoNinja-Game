@@ -247,17 +247,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const canvas = document.querySelector('canvas')
-console.log(canvas)
-
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 
 const context = canvas.getContext('2d')
-
-console.log(context)
-
 
 
 ;(0,_Animations_js__WEBPACK_IMPORTED_MODULE_1__.animation)()
