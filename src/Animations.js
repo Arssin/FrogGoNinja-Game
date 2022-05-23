@@ -1,6 +1,8 @@
 import {player,keys, platforms} from './Player.js'
 import {context, canvas} from './index.js'
 
+// Win condition
+let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
@@ -19,11 +21,13 @@ export function animation () {
 		player.velocity.x *= 0.9;
 
 		if(keys.right.pressed) {
+			scrollOffset += 5
 			platforms.forEach((platform)  => {
 				platform.position.x -= 5
 			})
 		
 		} else if(keys.left.pressed) {
+			scrollOffset -= 5
 			platforms.forEach((platform)  => {
 				platform.position.x += 5
 			})
@@ -31,10 +35,15 @@ export function animation () {
 		}
 	}
 
+console.log(scrollOffset)
+
 	//Detekcja kolizji
 	platforms.forEach((platform)  => {
 	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width) {
 		player.velocity.y = 0
 	}
 })
+
+if (scrollOffset > 3000) {
+console.log('its a win') }
 }
