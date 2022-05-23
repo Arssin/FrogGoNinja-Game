@@ -14,27 +14,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Player.js */ "./src/Player.js");
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
-<<<<<<< HEAD
-
- // Animacja Grawitacji
-=======
 /* harmony import */ var _Platforms_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Platforms.js */ "./src/Platforms.js");
 
 
  // Win condition
 
 var scrollOffset = 0; // Animacja Grawitacji
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 
 function animation() {
   requestAnimationFrame(animation);
   _index_js__WEBPACK_IMPORTED_MODULE_1__.context.clearRect(0, 0, _index_js__WEBPACK_IMPORTED_MODULE_1__.canvas.width, _index_js__WEBPACK_IMPORTED_MODULE_1__.canvas.height);
   _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.update();
-<<<<<<< HEAD
-  _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
-=======
   _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
     platform.draw();
   });
 
@@ -46,24 +37,6 @@ function animation() {
     _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.velocity.x *= 0.9;
 
     if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.keys.right.pressed) {
-<<<<<<< HEAD
-      _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
-        platform.position.x -= 5;
-      });
-    } else if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.keys.left.pressed) {
-      _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
-        platform.position.x += 5;
-      });
-    }
-  } //Detekcja kolizji
-
-
-  _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
-    if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.y + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.height <= platform.position.y && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.y + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.height + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.velocity.y >= platform.position.y && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.x + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.width >= platform.position.x && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.x <= platform.position.x + platform.width) {
-      _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.velocity.y = 0;
-    }
-  });
-=======
       scrollOffset += 5;
       _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
         platform.position.x -= 5;
@@ -87,13 +60,10 @@ function animation() {
   if (scrollOffset > 3000) {
     console.log('its a win');
   }
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 }
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./src/Platforms.js":
 /*!**************************!*\
   !*** ./src/Platforms.js ***!
@@ -158,7 +128,6 @@ var platforms = [new Platform({
 
 /***/ }),
 
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 /***/ "./src/Player.js":
 /*!***********************!*\
   !*** ./src/Player.js ***!
@@ -168,10 +137,6 @@ var platforms = [new Platform({
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "keys": () => (/* binding */ keys),
-<<<<<<< HEAD
-/* harmony export */   "platforms": () => (/* binding */ platforms),
-=======
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 /* harmony export */   "player": () => (/* binding */ player)
 /* harmony export */ });
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
@@ -226,44 +191,7 @@ var Player = /*#__PURE__*/function () {
   return Player;
 }();
 
-<<<<<<< HEAD
-var Platform = /*#__PURE__*/function () {
-  function Platform(_ref) {
-    var x = _ref.x,
-        y = _ref.y;
-
-    _classCallCheck(this, Platform);
-
-    this.position = {
-      x: x,
-      y: y
-    };
-    this.width = 400;
-    this.height = 50;
-  }
-
-  _createClass(Platform, [{
-    key: "draw",
-    value: function draw() {
-      _index_js__WEBPACK_IMPORTED_MODULE_0__.context.fillStyle = 'blue';
-      _index_js__WEBPACK_IMPORTED_MODULE_0__.context.fillRect(this.position.x, this.position.y, this.width, this.height);
-    }
-  }]);
-
-  return Platform;
-}();
-
 var player = new Player();
-var platforms = [new Platform({
-  x: 300,
-  y: 1100
-}), new Platform({
-  x: 1000,
-  y: 1000
-})];
-=======
-var player = new Player();
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 var keys = {
   right: {
     pressed: false
@@ -290,13 +218,8 @@ function jump(kek) {
 } //Player Movement
 
 
-<<<<<<< HEAD
-window.addEventListener('keydown', function (_ref2) {
-  var key = _ref2.key;
-=======
 window.addEventListener('keydown', function (_ref) {
   var key = _ref.key;
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 
   switch (key) {
     case 'ArrowLeft':
@@ -381,12 +304,6 @@ var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var context = canvas.getContext('2d');
-<<<<<<< HEAD
-console.log(context);
-(0,_Animations_js__WEBPACK_IMPORTED_MODULE_1__.animation)();
-_Player_js__WEBPACK_IMPORTED_MODULE_0__.player.update();
-
-=======
 (0,_Animations_js__WEBPACK_IMPORTED_MODULE_1__.animation)();
 _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.update();
 
@@ -404,7 +321,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "85f43c80c38dee3079f42ddeced37558.png");
 
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 /***/ })
 
 /******/ 	});
@@ -446,8 +362,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -460,7 +374,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		})();
 /******/ 	})();
 /******/ 	
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -477,8 +390,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		var scriptUrl;
@@ -499,7 +410,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
->>>>>>> c8e98e2bbd22f44a7ace1b0a8fa448dec37db157
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
