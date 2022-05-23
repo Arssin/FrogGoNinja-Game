@@ -1,5 +1,6 @@
-import {player,keys, platforms} from './Player.js'
+import {player,keys} from './Player.js'
 import {context, canvas} from './index.js'
+import {platforms} from './Platforms.js'
 
 // Win condition
 let scrollOffset = 0

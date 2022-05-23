@@ -1,7 +1,4 @@
 import {context, canvas} from './index.js'
-import blocks from './images/blocks.png'
-
-console.log(blocks)
 
 const GRAVITY = 0.2
 
@@ -40,26 +37,7 @@ update(){
  }
 }
 
-class Platform {
-  constructor({x,y}){
-    this.position = {
-      x: x,
-      y: y,
-    }
-    this.width = 400
-    this.height = 50
-  }
-
-  draw(){
-    context.fillStyle = 'blue'
-    context.fillRect(this.position.x, this.position.y,this.width,this.height)
-  }
-
-}
-
-
 export const player = new Player()
-export const platforms = [ new Platform({x: 300, y: 1100}), new Platform({x:1000, y: 1000})]
 
 
 export const keys = {

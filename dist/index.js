@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Player.js */ "./src/Player.js");
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
+/* harmony import */ var _Platforms_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Platforms.js */ "./src/Platforms.js");
+
 
  // Win condition
 
@@ -23,7 +25,7 @@ function animation() {
   requestAnimationFrame(animation);
   _index_js__WEBPACK_IMPORTED_MODULE_1__.context.clearRect(0, 0, _index_js__WEBPACK_IMPORTED_MODULE_1__.canvas.width, _index_js__WEBPACK_IMPORTED_MODULE_1__.canvas.height);
   _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.update();
-  _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
+  _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
     platform.draw();
   });
 
@@ -36,12 +38,12 @@ function animation() {
 
     if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.keys.right.pressed) {
       scrollOffset += 5;
-      _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
+      _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
         platform.position.x -= 5;
       });
     } else if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.keys.left.pressed) {
       scrollOffset -= 5;
-      _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
+      _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
         platform.position.x += 5;
       });
     }
@@ -49,7 +51,7 @@ function animation() {
 
   console.log(scrollOffset); //Detekcja kolizji
 
-  _Player_js__WEBPACK_IMPORTED_MODULE_0__.platforms.forEach(function (platform) {
+  _Platforms_js__WEBPACK_IMPORTED_MODULE_2__.platforms.forEach(function (platform) {
     if (_Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.y + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.height <= platform.position.y && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.y + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.height + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.velocity.y >= platform.position.y && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.x + _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.width >= platform.position.x && _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.position.x <= platform.position.x + platform.width) {
       _Player_js__WEBPACK_IMPORTED_MODULE_0__.player.velocity.y = 0;
     }
@@ -62,6 +64,70 @@ function animation() {
 
 /***/ }),
 
+/***/ "./src/Platforms.js":
+/*!**************************!*\
+  !*** ./src/Platforms.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "platforms": () => (/* binding */ platforms)
+/* harmony export */ });
+/* harmony import */ var _images_blocks_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/blocks.png */ "./src/images/blocks.png");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+
+console.log(_images_blocks_png__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+var Platform = /*#__PURE__*/function () {
+  function Platform(_ref) {
+    var x = _ref.x,
+        y = _ref.y,
+        image = _ref.image;
+
+    _classCallCheck(this, Platform);
+
+    this.position = {
+      x: x,
+      y: y
+    };
+    this.width = 1000;
+    this.height = 500;
+    this.image = image;
+  }
+
+  _createClass(Platform, [{
+    key: "draw",
+    value: function draw() {
+      _index_js__WEBPACK_IMPORTED_MODULE_1__.context.drawImage(this.image, this.position.x, this.position.y);
+    }
+  }]);
+
+  return Platform;
+}();
+
+var image = new Image();
+image.src = _images_blocks_png__WEBPACK_IMPORTED_MODULE_0__["default"];
+console.log(image);
+var platforms = [new Platform({
+  x: 300,
+  y: 1100,
+  image: image
+}), new Platform({
+  x: 1000,
+  y: 1000,
+  image: image
+})];
+
+/***/ }),
+
 /***/ "./src/Player.js":
 /*!***********************!*\
   !*** ./src/Player.js ***!
@@ -71,11 +137,9 @@ function animation() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "keys": () => (/* binding */ keys),
-/* harmony export */   "platforms": () => (/* binding */ platforms),
 /* harmony export */   "player": () => (/* binding */ player)
 /* harmony export */ });
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
-/* harmony import */ var _images_blocks_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/blocks.png */ "./src/images/blocks.png");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -83,8 +147,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 
-
-console.log(_images_blocks_png__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var GRAVITY = 0.2;
 
 var Player = /*#__PURE__*/function () {
@@ -129,40 +191,7 @@ var Player = /*#__PURE__*/function () {
   return Player;
 }();
 
-var Platform = /*#__PURE__*/function () {
-  function Platform(_ref) {
-    var x = _ref.x,
-        y = _ref.y;
-
-    _classCallCheck(this, Platform);
-
-    this.position = {
-      x: x,
-      y: y
-    };
-    this.width = 400;
-    this.height = 50;
-  }
-
-  _createClass(Platform, [{
-    key: "draw",
-    value: function draw() {
-      _index_js__WEBPACK_IMPORTED_MODULE_0__.context.fillStyle = 'blue';
-      _index_js__WEBPACK_IMPORTED_MODULE_0__.context.fillRect(this.position.x, this.position.y, this.width, this.height);
-    }
-  }]);
-
-  return Platform;
-}();
-
 var player = new Player();
-var platforms = [new Platform({
-  x: 300,
-  y: 1100
-}), new Platform({
-  x: 1000,
-  y: 1000
-})];
 var keys = {
   right: {
     pressed: false
@@ -189,8 +218,8 @@ function jump(kek) {
 } //Player Movement
 
 
-window.addEventListener('keydown', function (_ref2) {
-  var key = _ref2.key;
+window.addEventListener('keydown', function (_ref) {
+  var key = _ref.key;
 
   switch (key) {
     case 'ArrowLeft':
@@ -221,8 +250,8 @@ window.addEventListener('keydown', function (_ref2) {
       }
   }
 });
-window.addEventListener('keyup', function (_ref3) {
-  var key = _ref3.key;
+window.addEventListener('keyup', function (_ref2) {
+  var key = _ref2.key;
 
   switch (key) {
     case 'ArrowLeft':
