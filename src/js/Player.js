@@ -1,12 +1,18 @@
-import {context, canvas} from './index.js'
+
+
+const canv = document.querySelector('canvas')
+const c = canv.getContext('2d')
+canv.width = window.innerWidth
+canv.height = window.innerHeight
+
 
 const GRAVITY = 0.2
 
-class Player {
+export class Player {
   constructor() {
     this.position = {
       x: 10,
-      y: 1200,
+      y: 200,
   }
   this.velocity = {
     x: 0,
@@ -19,8 +25,8 @@ class Player {
 
 // Rysunek gracza
 draw(){
-    context.fillStyle = 'red'
-    context.fillRect(this.position.x, this.position.y, this.width, this.height)
+    c.fillStyle = 'red'
+    c.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
 //Update pozycji gracza
 update(){
@@ -29,7 +35,7 @@ update(){
   this.position.x += this.velocity.x
   
   //Grawitacja działa jeżeli jest w oknie canvasa
-  if(this.position.y + this.height + this.velocity.y <= canvas.height ){
+  if(this.position.y + this.height + this.velocity.y <= canv.height ){
   this.velocity.y += GRAVITY 
 } else { 
   this.velocity.y = 0
