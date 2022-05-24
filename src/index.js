@@ -10,8 +10,11 @@ canvas.height = window.innerHeight
 export const context = canvas.getContext('2d')
 
 
-animation()
-player.update()
 
+
+
+
+player.update()
+animation()
 
 

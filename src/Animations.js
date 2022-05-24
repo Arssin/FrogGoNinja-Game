@@ -1,12 +1,14 @@
 import {player,keys} from './Player.js'
-import {context, canvas} from './index.js'
+import {context,canvas} from './index.js'
 import {platforms} from './Platforms.js'
+
 
 // Win condition
 let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
+
   requestAnimationFrame(animation)
   context.clearRect(0, 0, canvas.width, canvas.height)
   player.update()
@@ -14,6 +16,7 @@ export function animation () {
 		platform.draw()
 	})
   
+
   if(keys.right.pressed && player.position.x < 1200) {
 		player.velocity.x = 5;
 	} else if(keys.left.pressed && player.position.x > 250) {
