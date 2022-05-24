@@ -11,10 +11,10 @@ export function animation () {
 
   requestAnimationFrame(animation)
   context.clearRect(0, 0, canvas.width, canvas.height)
-  player.update()
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+	player.update()
   
 
   if(keys.right.pressed && player.position.x < 1200) {
