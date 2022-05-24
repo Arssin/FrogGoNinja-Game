@@ -22,4 +22,4 @@ class Platform {
 }
 
 
-export const platforms = [ new Platform({x: -1, y: 520, image: image}), new Platform({x:image.width - 2, y: 520, image: image})]
+export const platforms = [ new Platform({x: -1, y: 510, image: image}), new Platform({x:image.width - 2, y: 510, image: image})]
