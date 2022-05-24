@@ -12,9 +12,6 @@ module.exports = {
   externals: {
 		canvas: "commonjs canvas" // Important (2)
 	},
-  resolve: {
-		extensions: ['.ts', '.tsx', '.js']
-	},
   module: {
     rules: [
       {
@@ -35,14 +32,6 @@ module.exports = {
           }
         ]
       },   
-      {
-				test: /\.css$/,
-				exclude: /node_modules/,
-				use: [
-					"style-loader",
-					"css-loader"
-				]
-			},
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

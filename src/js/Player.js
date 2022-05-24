@@ -11,8 +11,8 @@ const GRAVITY = 0.2
 export class Player {
   constructor() {
     this.position = {
-      x: 10,
-      y: 200,
+      x: 30,
+      y: 0,
   }
   this.velocity = {
     x: 0,
