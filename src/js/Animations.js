@@ -8,9 +8,9 @@ let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
-
   requestAnimationFrame(animation)
-  context.clearRect(0, 0, canvas.width, canvas.height)
+	context.fillStyle = 'white'
+  context.fillRect(0, 0, canvas.width, canvas.height)
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
