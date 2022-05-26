@@ -8,18 +8,18 @@ let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
-
   requestAnimationFrame(animation)
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  player.update()
+	context.fillStyle = 'white'
+  context.fillRect(0, 0, canvas.width, canvas.height)
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+	player.update()
   
 
-  if(keys.right.pressed && player.position.x < 1200) {
+  if(keys.right.pressed && player.position.x < 400) {
 		player.velocity.x = 5;
-	} else if(keys.left.pressed && player.position.x > 250) {
+	} else if(keys.left.pressed && player.position.x > 100) {
 		player.velocity.x = -5;
 	} else {
 		player.velocity.x *= 0.9;

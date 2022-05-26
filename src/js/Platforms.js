@@ -1,10 +1,6 @@
 import blocks from '../images/blocks.png';
 import {context} from './index.js'
 
-// const image = new Image()
-// image.src = './images/blocks.png'
-// console.log(image)
-
 const image = new Image()
 image.src = blocks
 
@@ -16,8 +12,8 @@ class Platform {
 
     },
     this.image = image
-    this.width = 500
-    this.height = 200
+    this.width = image.width
+    this.height = image.height
   }
 
   draw(){
@@ -26,4 +22,4 @@ class Platform {
 }
 
 
-export const platforms = [ new Platform({x: 400, y: 500, image: image}), new Platform({x:1000, y: 200, image: image})]
+export const platforms = [ new Platform({x: -1, y: 510, image: image}), new Platform({x:image.width - 2, y: 510, image: image})]
