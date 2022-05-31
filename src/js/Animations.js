@@ -1,6 +1,7 @@
 import {player,keys} from './Player.js'
 import {context,canvas} from './index.js'
 import {platforms} from './Platforms.js'
+import {genericObject} from './GenericObject.js'
 
 
 // Win condition
@@ -11,6 +12,9 @@ export function animation () {
   requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
+	genericObject.forEach((genericObject) => {
+		genericObject.draw()
+	})
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
