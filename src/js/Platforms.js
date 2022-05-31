@@ -1,8 +1,9 @@
 import blocks from '../images/blocks.png';
 import {context} from './index.js'
+import {createImage} from './CreateImage'
 
-const image = new Image()
-image.src = blocks
+
+const platformImage = createImage(blocks)
 
 class Platform {
   constructor({x,y, image}){
@@ -22,4 +23,7 @@ class Platform {
 }
 
 
-export const platforms = [ new Platform({x: -1, y: 510, image: image}), new Platform({x:image.width - 2, y: 510, image: image})]
+
+
+
+export const platforms = [ new Platform({x: -1 ,y: 510, image: platformImage }), new Platform({x: platformImage.width -1, y: 510, image: platformImage})]
