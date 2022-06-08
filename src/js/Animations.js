@@ -1,6 +1,7 @@
 import {player,keys} from './Player.js'
 import {context,canvas} from './index.js'
 import {platforms} from './Platforms.js'
+import {genericObject} from './GenericObject.js'
 
 
 // Win condition
@@ -11,11 +12,14 @@ export function animation () {
   requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
+	genericObject.forEach((genericObject) => {
+		genericObject.draw()
+	})
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+
 	player.update()
-  
 
   if(keys.right.pressed && player.position.x < 400) {
 		player.velocity.x = 5;
@@ -29,11 +33,17 @@ export function animation () {
 			platforms.forEach((platform)  => {
 				platform.position.x -= 5
 			})
+			genericObject.forEach((genericObject) => {
+				genericObject.position.x -= 3
+			})
 		
 		} else if(keys.left.pressed) {
 			scrollOffset -= 5
 			platforms.forEach((platform)  => {
 				platform.position.x += 5
+			})
+			genericObject.forEach((genericObject) => {
+				genericObject.position.x += 3
 			})
 		
 		}
@@ -47,6 +57,7 @@ console.log(scrollOffset)
 		player.velocity.y = 0
 	}
 })
+
 
 //Add win condition
 if (scrollOffset > 3000) {
