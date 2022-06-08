@@ -29,10 +29,16 @@ export const genericObject = [new GenericObject({
   image: backGroundImage
 }), 
 new GenericObject({
-  x: 100,
+  x: 300,
+  y: 320,
+  image: houseImage,
+}),
+new GenericObject({
+  x: 1000,
   y: 320,
   image: houseImage,
 })
+
 
 
 
