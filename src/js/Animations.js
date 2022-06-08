@@ -18,8 +18,8 @@ export function animation () {
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+
 	player.update()
-  
 
   if(keys.right.pressed && player.position.x < 400) {
 		player.velocity.x = 5;
@@ -51,6 +51,7 @@ console.log(scrollOffset)
 		player.velocity.y = 0
 	}
 })
+
 
 //Add win condition
 if (scrollOffset > 3000) {
