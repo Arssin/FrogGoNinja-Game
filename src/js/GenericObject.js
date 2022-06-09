@@ -3,10 +3,10 @@ import {context} from './index.js'
 import {createImage} from './CreateImage'
 import houses from '../images/house.png';
 
-const backGroundImage = createImage(background)
-const houseImage = createImage(houses)
+export let backGroundImage = createImage(background)
+export let houseImage = createImage(houses)
 
-class GenericObject {
+export class GenericObject {
   constructor({x,y, image}){
     this.position = {
       x: x,
@@ -23,7 +23,7 @@ class GenericObject {
   }
 }
 
-export const genericObject = [new GenericObject({
+export let genericObject = [new GenericObject({
   x: 0,
   y: 0,
   image: backGroundImage
@@ -38,9 +38,5 @@ new GenericObject({
   y: 320,
   image: houseImage,
 })
-
-
-
-
 ];
 

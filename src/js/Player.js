@@ -42,7 +42,7 @@ update(){
  }
 }
 
-export const player = new Player()
+export let player = new Player()
 
 
 export const keys = {

@@ -2,10 +2,11 @@ import {player,keys} from './Player.js'
 import {context,canvas, heightCanvas} from './index.js'
 import {platforms} from './Platforms.js'
 import {genericObject} from './GenericObject.js'
+import {init} from './Initialization'
 
 
 // Win condition
-let scrollOffset = 0
+ export let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
@@ -18,6 +19,8 @@ export function animation () {
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+
+	console.log()
 
 	player.update()
 
@@ -49,7 +52,7 @@ export function animation () {
 		}
 	}
 
-// console.log(scrollOffset)
+console.log(scrollOffset)
 
 	//Detekcja kolizji
 	platforms.forEach((platform)  => {
@@ -67,8 +70,8 @@ console.log('its a win') }
 // Lose condition
 if(player.position.y > heightCanvas ) {
 	console.log('you lose')
+	init()
 }
-
 }
 
 
