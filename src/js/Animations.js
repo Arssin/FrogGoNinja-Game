@@ -1,5 +1,5 @@
 import {player,keys} from './Player.js'
-import {context,canvas} from './index.js'
+import {context,canvas, heightCanvas} from './index.js'
 import {platforms} from './Platforms.js'
 import {genericObject} from './GenericObject.js'
 
@@ -49,7 +49,7 @@ export function animation () {
 		}
 	}
 
-console.log(scrollOffset)
+// console.log(scrollOffset)
 
 	//Detekcja kolizji
 	platforms.forEach((platform)  => {
@@ -62,9 +62,14 @@ console.log(scrollOffset)
 //Add win condition
 if (scrollOffset > 3000) {
 console.log('its a win') }
+
+
+// Lose condition
+if(player.position.y > heightCanvas ) {
+	console.log('you lose')
 }
 
-//Lose condition
-// if(player.position.y > canvas.heigh) {
-// 	console.log('you lose')
-// }
+}
+
+
+
