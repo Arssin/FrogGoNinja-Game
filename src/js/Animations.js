@@ -4,6 +4,7 @@ import {platforms} from './Platforms.js'
 import {genericObject} from './GenericObject.js'
 import {init} from './Initialization'
 
+const PLAYER_SPEED = 5
 
 // Win condition
  export let scrollOffset = 0
@@ -25,28 +26,28 @@ export function animation () {
 	player.update()
 
   if(keys.right.pressed && player.position.x < 400) {
-		player.velocity.x = 5;
+		player.velocity.x = PLAYER_SPEED;
 	} else if(keys.left.pressed && player.position.x > 100) {
-		player.velocity.x = -5;
+		player.velocity.x = -PLAYER_SPEED;
 	} else {
-		player.velocity.x *= 0.9;
+		player.velocity.x *= 0.9 ;
 
 		if(keys.right.pressed) {
-			scrollOffset += 5
+			scrollOffset += PLAYER_SPEED
 			platforms.forEach((platform)  => {
-				platform.position.x -= 5
+				platform.position.x -= PLAYER_SPEED
 			})
 			genericObject.forEach((genericObject) => {
-				genericObject.position.x -= 3
+				genericObject.position.x -= PLAYER_SPEED * 0.66
 			})
 		
 		} else if(keys.left.pressed) {
-			scrollOffset -= 5
+			scrollOffset -= PLAYER_SPEED
 			platforms.forEach((platform)  => {
-				platform.position.x += 5
+				platform.position.x += PLAYER_SPEED
 			})
 			genericObject.forEach((genericObject) => {
-				genericObject.position.x += 3
+				genericObject.position.x += PLAYER_SPEED * 0.66
 			})
 		
 		}

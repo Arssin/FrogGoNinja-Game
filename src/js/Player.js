@@ -8,6 +8,7 @@ canv.height = window.innerHeight
 
 const GRAVITY = 0.2
 
+
 export class Player {
   constructor() {
     this.position = {
@@ -20,6 +21,7 @@ export class Player {
   }
   this.width = 30;
   this.height = 30;
+ 
 
 }
 
