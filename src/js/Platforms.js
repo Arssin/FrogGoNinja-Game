@@ -3,9 +3,10 @@ import {context} from './index.js'
 import {createImage} from './CreateImage'
 
 
-const platformImage = createImage(blocks)
 
-class Platform {
+export let platformImage = createImage(blocks)
+
+export class Platform {
   constructor({x,y, image}){
     this.position = {
       x: x,
@@ -26,4 +27,5 @@ class Platform {
 
 
 
-export const platforms = [ new Platform({x: -1 ,y: 510, image: platformImage }), new Platform({x: platformImage.width -1, y: 510, image: platformImage})]
+export let platforms = [ new Platform({x: -1 ,y: 510, image: platformImage }), new Platform({x: platformImage.width -1, y: 510, image: platformImage}), new Platform({x: platformImage.width *2 + 100, y: 510, image: platformImage})
+]

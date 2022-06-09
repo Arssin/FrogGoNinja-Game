@@ -38,13 +38,11 @@ update(){
   //Grawitacja działa jeżeli jest w oknie canvasa
   if(this.position.y + this.height + this.velocity.y <= canv.height ){
   this.velocity.y += GRAVITY 
-} else { 
-  this.velocity.y = 0
-  }
+} 
  }
 }
 
-export const player = new Player()
+export let player = new Player()
 
 
 export const keys = {
