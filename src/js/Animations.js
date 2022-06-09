@@ -63,3 +63,8 @@ console.log(scrollOffset)
 if (scrollOffset > 3000) {
 console.log('its a win') }
 }
+
+//Lose condition
+// if(player.position.y > canvas.heigh) {
+// 	console.log('you lose')
+// }
