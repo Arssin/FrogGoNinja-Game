@@ -21,8 +21,7 @@ export function animation () {
 		platform.draw()
 	})
 
-	console.log()
-
+console.log(scrollOffset)
 	player.update()
 
   if(keys.right.pressed && player.position.x < 400) {
@@ -30,7 +29,7 @@ export function animation () {
 	} else if(keys.left.pressed && player.position.x > 100) {
 		player.velocity.x = -PLAYER_SPEED;
 	} else {
-		player.velocity.x *= 0.9 ;
+		player.velocity.x *= 0.9  ;
 
 		if(keys.right.pressed) {
 			scrollOffset += PLAYER_SPEED
@@ -41,7 +40,7 @@ export function animation () {
 				genericObject.position.x -= PLAYER_SPEED * 0.66
 			})
 		
-		} else if(keys.left.pressed) {
+		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
 			platforms.forEach((platform)  => {
 				platform.position.x += PLAYER_SPEED
@@ -53,7 +52,7 @@ export function animation () {
 		}
 	}
 
-console.log(scrollOffset)
+
 
 	//Detekcja kolizji
 	platforms.forEach((platform)  => {

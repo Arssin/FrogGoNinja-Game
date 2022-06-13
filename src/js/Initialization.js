@@ -26,7 +26,7 @@ new GenericObject({
   image: houseImage,
 }),
 new GenericObject({
-  x: 1000,
+  x: 1020,
   y: 320,
   image: houseImage,
 })
