@@ -1,13 +1,17 @@
-
+import spriteStandRight from '../images/frogoWait.png'
+import {createImage} from './CreateImage'
 
 const canv = document.querySelector('canvas')
-const c = canv.getContext('2d')
+const context = canv.getContext('2d')
 canv.width = window.innerWidth
 canv.height = window.innerHeight
 
 
 const GRAVITY = 0.2
+let count = 0
+let frameIndex = 0
 
+export const spriteImageStandRight = createImage(spriteStandRight) 
 
 export class Player {
   constructor() {
@@ -19,19 +23,41 @@ export class Player {
     x: 0,
     y: 0,
   }
-  this.width = 30;
-  this.height = 30;
- 
+  this.width = 64;
+  this.height = 64;
+  this.image = spriteImageStandRight 
+  this.frameWidth = 32
+  this.frameHeight = 32
 
 }
 
 // Rysunek gracza
 draw(){
-    c.fillStyle = 'red'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
+  context.drawImage(
+    this.image,
+    frameIndex * this.frameWidth,
+    0,
+    this.frameWidth,
+    this.frameHeight,
+    this.position.x,
+    this.position.y,
+    this.width, 
+    this.height
+    )
+    // c.fillStyle = 'blue'
+    // c.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
 //Update pozycji gracza
 update(){
+  count ++
+  if(count > 8) {
+    frameIndex ++;
+    count = 0
+  }
+  if (frameIndex > 10) {
+    frameIndex = 0
+  }
+
   this.draw()
   this.position.y += this.velocity.y
   this.position.x += this.velocity.x
