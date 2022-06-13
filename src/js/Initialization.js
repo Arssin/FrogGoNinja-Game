@@ -5,7 +5,10 @@ import { scrollOffset } from './Animations'
 
 export function init(){
   
-  platforms = [ new Platform({x: -1 ,y: 510, image: platformImage }), new Platform({x: platformImage.width -1, y: 510, image: platformImage}), new Platform({x: platformImage.width *2 + 100, y: 510, image: platformImage})
+  platforms = [ new Platform({x: -1 ,y: 510, image: platformImage }), new Platform({x: platformImage.width -1, y: 510, image: platformImage}), new Platform({x: platformImage.width *2 + 100, y: 510, image: platformImage}),
+    new Platform({x: platformImage.width *3 + 300, y: 510, image: platformImage})
+
+
   ]
 
   player = new Player()

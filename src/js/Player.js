@@ -64,7 +64,7 @@ export const keys = {
 
 function jump(kek) {     
    if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
-player.velocity.y -= 20
+player.velocity.y -= 10
 setTimeout(kek , 1000)
 
 }
