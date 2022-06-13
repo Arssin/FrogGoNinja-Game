@@ -1,5 +1,6 @@
 import {player} from './Player.js'
 import {animation} from './Animations.js'
+import {init} from './Initialization'
 
 export const canvas = document.querySelector('canvas')
 export const context = canvas.getContext('2d')
@@ -15,13 +16,9 @@ export const heightCanvas = canvas.height
 
 
 
-// console.log(player.update.toString())
-// console.log(animation.toString())
-// console.log(player.draw.toString())
-
-
 window.onload = () => {
-player.update()
+  init()
+// player.update()
 animation()
 }
 
