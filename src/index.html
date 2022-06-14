@@ -7,7 +7,7 @@
   <title>Jumping Game Mateusz Binięda</title>
 <style>
  body {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
   width: 100%;
   height: 100%;
@@ -20,10 +20,14 @@
   align-items: center;
 }
 
+.container {
+  position: relative;
+}
+
 .restartBtn {
-  position: fixed;
-  right: 460px;
-  top: 190px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 
@@ -32,8 +36,9 @@
 </style>
 </head>
 <body>
-  <button class="restartBtn">Restart game</button>
-
-  <canvas id="canvas"></canvas>
+  <div class="container">
+    <canvas id="canvas"></canvas>
+    <button class="restartBtn">Restart game</button>
+  </div>
 </body>
 </html>
