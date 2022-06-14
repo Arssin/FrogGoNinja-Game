@@ -14,13 +14,21 @@ export const heightCanvas = canvas.height
 
 
 
-
-
 window.onload = () => {
   init()
 // player.update()
 animation()
 }
+
+
+
+/// Other Functions
+
+const restart = document.querySelector('.restartBtn')
+
+restart.addEventListener('click', () => {
+  init()
+})
 
 
 
