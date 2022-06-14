@@ -28,6 +28,7 @@ export class Player {
   this.image = spriteImageStandRight 
   this.frameWidth = 32
   this.frameHeight = 32
+  this.jump = false
 
 }
 
@@ -83,17 +84,26 @@ export const keys = {
   up: {
     pressed: false,
   },
-  jumping: {
-    pressed: true,
-  }
 }
 
-function jump(kek) {     
-   if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
-player.velocity.y -= 10
-setTimeout(kek , 1000)
+// function jump() {     
+// if( keys.up.pressed && player.jump == false) {
+//   player.jump === true
+  
+// }
+// console.log(player.jump)
+// console.log(keys.up.pressed)
 
-}
+//    if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
+// player.velocity.y -= 10
+// setTimeout(kek , 1000)
+
+// }
+
+//Key D = 68 Arrow Right = 39
+//Key A = 65 Arrow Left = 37
+// Key W = 87 Arrow Up = 38
+
 
 
 
@@ -119,7 +129,11 @@ window.addEventListener('keydown', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
-      jump()
+      if(keys.up.pressed === false && player.jump === false && player.velocity.y === 0){
+        player.jump = true
+        player.velocity.y -= 10
+        console.log(player.jump)
+      }
       break;
     }
   }
@@ -148,7 +162,7 @@ window.addEventListener('keyup', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
-      player.velocity.y = 0
+      player.jump = false
       break;
     }
   }
