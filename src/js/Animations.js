@@ -80,7 +80,7 @@ platforms.forEach((platform)  => {
 
 
 //Add win condition
-if (scrollOffset > 3000) {
+if (scrollOffset > 13000) {
 console.log('its a win') }
 
 
