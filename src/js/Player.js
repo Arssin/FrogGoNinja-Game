@@ -1,13 +1,17 @@
-
+import spriteStandRight from '../images/frogoWait.png'
+import {createImage} from './CreateImage'
 
 const canv = document.querySelector('canvas')
-const c = canv.getContext('2d')
+const context = canv.getContext('2d')
 canv.width = window.innerWidth
 canv.height = window.innerHeight
 
 
 const GRAVITY = 0.2
+let count = 0
+let frameIndex = 0
 
+export const spriteImageStandRight = createImage(spriteStandRight) 
 
 export class Player {
   constructor() {
@@ -19,19 +23,42 @@ export class Player {
     x: 0,
     y: 0,
   }
-  this.width = 30;
-  this.height = 30;
- 
+  this.width = 64;
+  this.height = 64;
+  this.image = spriteImageStandRight 
+  this.frameWidth = 32
+  this.frameHeight = 32
+  this.jump = false
 
 }
 
 // Rysunek gracza
 draw(){
-    c.fillStyle = 'red'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
+  context.drawImage(
+    this.image,
+    frameIndex * this.frameWidth,
+    0,
+    this.frameWidth,
+    this.frameHeight,
+    this.position.x,
+    this.position.y,
+    this.width, 
+    this.height
+    )
+    // c.fillStyle = 'blue'
+    // c.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
 //Update pozycji gracza
 update(){
+  count ++
+  if(count > 8) {
+    frameIndex ++;
+    count = 0
+  }
+  if (frameIndex > 10) {
+    frameIndex = 0
+  }
+
   this.draw()
   this.position.y += this.velocity.y
   this.position.x += this.velocity.x
@@ -57,17 +84,26 @@ export const keys = {
   up: {
     pressed: false,
   },
-  jumping: {
-    pressed: true,
-  }
 }
 
-function jump(kek) {     
-   if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
-player.velocity.y -= 10
-setTimeout(kek , 1000)
+// function jump() {     
+// if( keys.up.pressed && player.jump == false) {
+//   player.jump === true
+  
+// }
+// console.log(player.jump)
+// console.log(keys.up.pressed)
 
-}
+//    if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
+// player.velocity.y -= 10
+// setTimeout(kek , 1000)
+
+// }
+
+//Key D = 68 Arrow Right = 39
+//Key A = 65 Arrow Left = 37
+// Key W = 87 Arrow Up = 38
+
 
 
 
@@ -93,7 +129,11 @@ window.addEventListener('keydown', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
-      jump()
+      if(keys.up.pressed === false && player.jump === false && player.velocity.y === 0){
+        player.jump = true
+        player.velocity.y -= 10
+        console.log(player.jump)
+      }
       break;
     }
   }
@@ -122,7 +162,7 @@ window.addEventListener('keyup', ({key}) => {
     case 'W':
     case 'w' : {
       console.log('up')
-      player.velocity.y = 0
+      player.jump = false
       break;
     }
   }
