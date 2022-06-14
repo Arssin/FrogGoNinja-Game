@@ -43,6 +43,9 @@ console.log(scrollOffset)
 			genericObject.forEach((genericObject) => {
 				genericObject.position.x -= PLAYER_SPEED * 0.66
 			})
+			platforms.forEach((platform)  => {
+				platform.position.x -= PLAYER_SPEED
+			})
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
@@ -52,7 +55,9 @@ console.log(scrollOffset)
 			genericObject.forEach((genericObject) => {
 				genericObject.position.x += PLAYER_SPEED * 0.66
 			})
-		
+			platforms.forEach((platform)  => {
+				platform.position.x += PLAYER_SPEED
+			})
 		}
 	}
 
@@ -60,10 +65,17 @@ console.log(scrollOffset)
 
 	//Detekcja kolizji
 	blocks.forEach((blocks)  => {
-	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width >= blocks.position.x && player.position.x <= blocks.position.x + blocks.width) {
+	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x + blocks.width + -6) {
 		player.velocity.y = 0
 	}
 })
+
+platforms.forEach((platform)  => {
+	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width  - 10>= platform.position.x && player.position.x <= platform.position.x + platform.width - 6) {
+		player.velocity.y = 0
+	}
+})
+
 
 
 //Add win condition
