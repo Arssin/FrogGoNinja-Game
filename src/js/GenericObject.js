@@ -1,4 +1,4 @@
-import background from '../images/background.png';
+import background from '../images/backgroundNew.png';
 import {context} from './index.js'
 import {createImage} from './CreateImage'
 import houses from '../images/house.png';

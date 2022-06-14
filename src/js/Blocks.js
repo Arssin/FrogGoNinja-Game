@@ -1,10 +1,10 @@
-import platfroms from '../images/platforms.png';
+import block from '../images/blocks.png';
 import {context} from './index.js'
 import {createImage} from './CreateImage'
 
-export let platformsImage = createImage(platfroms)
+export let blockImage = createImage(block)
 
-export class Platform {
+export class Block {
   constructor({x,y, image}){
     this.position = {
       x: x,
@@ -20,3 +20,7 @@ export class Platform {
     context.drawImage(this.image, this.position.x, this.position.y)
   }
 }
+
+
+
+

@@ -1,8 +1,9 @@
 import {player,keys} from './Player.js'
 import {context,canvas, heightCanvas} from './index.js'
-import {platforms} from './Platforms.js'
+import {blocks} from './Blocks.js'
 import {genericObject} from './GenericObject.js'
 import {init} from './Initialization'
+import {platforms} from './Platforms'
 
 const PLAYER_SPEED = 5
 
@@ -16,6 +17,9 @@ export function animation () {
   context.fillRect(0, 0, canvas.width, canvas.height)
 	genericObject.forEach((genericObject) => {
 		genericObject.draw()
+	})
+	blocks.forEach((blocks) => {
+		blocks.draw()
 	})
 	platforms.forEach((platform) => {
 		platform.draw()
@@ -33,8 +37,8 @@ console.log(scrollOffset)
 
 		if(keys.right.pressed) {
 			scrollOffset += PLAYER_SPEED
-			platforms.forEach((platform)  => {
-				platform.position.x -= PLAYER_SPEED
+			blocks.forEach((blocks)  => {
+				blocks.position.x -= PLAYER_SPEED
 			})
 			genericObject.forEach((genericObject) => {
 				genericObject.position.x -= PLAYER_SPEED * 0.66
@@ -42,8 +46,8 @@ console.log(scrollOffset)
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
-			platforms.forEach((platform)  => {
-				platform.position.x += PLAYER_SPEED
+			blocks.forEach((blocks)  => {
+				blocks.position.x += PLAYER_SPEED
 			})
 			genericObject.forEach((genericObject) => {
 				genericObject.position.x += PLAYER_SPEED * 0.66
@@ -55,8 +59,8 @@ console.log(scrollOffset)
 
 
 	//Detekcja kolizji
-	platforms.forEach((platform)  => {
-	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width >= platform.position.x && player.position.x <= platform.position.x + platform.width) {
+	blocks.forEach((blocks)  => {
+	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width >= blocks.position.x && player.position.x <= blocks.position.x + blocks.width) {
 		player.velocity.y = 0
 	}
 })
