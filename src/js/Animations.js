@@ -6,7 +6,7 @@ import {init} from './Initialization'
 import {platformsLevelOne} from './Platforms'
 
 // 4.5 default
-const PLAYER_SPEED = 4.5
+let PLAYER_SPEED = 4.5
 
 // Win condition
  export let scrollOffset = 0
@@ -26,7 +26,6 @@ export function animation () {
 		platform.draw()
 	})
 
-console.log(scrollOffset)
 	player.update()
 
   if(keys.right.pressed && player.position.x < 400) {
@@ -66,11 +65,6 @@ console.log(scrollOffset)
 
 
 	//Detekcja kolizji
-	blockLevelOne.forEach((blocks)  => {
-	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width ) {
-		player.velocity.y = 0
-	}
-})
 
 platformsLevelOne.forEach((platform)  => {
 	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width - 10>= platform.position.x && player.position.x <= platform.position.x - 20 + platform.width) {
@@ -78,19 +72,25 @@ platformsLevelOne.forEach((platform)  => {
 	}
 })
 
+console.log(player.position.y + player.height)
 
 	blockLevelOne.forEach((blocks)  => {
 	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width 
 		) {
 		player.velocity.y = 0
-	}
+	} else if (
+		player.position.y + player.height >= blocks.position.y 
+		&& 
+		player.position.x + player.width >= blocks.position.x
+		&& 
+		player.position.x + player.width <= blocks.position.x + blocks.width
+	) {
+		player.velocity.x = -1
+	} 
+
 })
 
-platformsLevelOne.forEach((platform)  => {
-	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width - 10>= platform.position.x && player.position.x <= platform.position.x - 20 + platform.width) {
-		player.velocity.y = 0
-	}
-})
+
 
 
 
