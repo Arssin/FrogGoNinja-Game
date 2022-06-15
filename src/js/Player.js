@@ -6,7 +6,7 @@ const context = canv.getContext('2d')
 canv.width = window.innerWidth
 canv.height = window.innerHeight
 
-
+//default 0.2
 const GRAVITY = 0.2
 let count = 0
 let frameIndex = 0
@@ -86,25 +86,12 @@ export const keys = {
   },
 }
 
-// function jump() {     
-// if( keys.up.pressed && player.jump == false) {
-//   player.jump === true
-  
-// }
-// console.log(player.jump)
-// console.log(keys.up.pressed)
 
-//    if(event.repeat) {return} //TODO Player dalej może skakać pomimo bycia w górze Refactor
-// player.velocity.y -= 10
-// setTimeout(kek , 1000)
 
-// }
 
 //Key D = 68 Arrow Right = 39
 //Key A = 65 Arrow Left = 37
 // Key W = 87 Arrow Up = 38
-
-
 
 
 //Player Movement

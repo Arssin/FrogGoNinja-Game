@@ -13,7 +13,12 @@ export function init(){
     new Block({x: blockImage.width *2 + 100, y: 510, image: blockImage}),
     new Block({x: blockImage.width *3 + 300, y: 510, image: blockImage}),
     new Block({x: blockImage.width *6 , y: 510, image: blockImage}),
-    new Block({x: blockImage.width * 11 , y: 510, image: blockImage})
+    new Block({x: blockImage.width * 11 , y: 510, image: blockImage}),
+    new Block({x: blockImage.width * 18 , y: 510, image: blockImage}),
+    new Block({x: blockImage.width * 19 , y: 460, image: blockImage}),
+    new Block({x: blockImage.width * 20 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 22 , y: 420, image: blockImage}),
+    new Block({x: 200 ,y: 450, image: blockImage }),
   ]
 
 
@@ -25,6 +30,14 @@ export function init(){
     new Platform({x:blockImage.width * 7 + platformsImage.width * 5 , y: 340, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width * 8 , y: 440, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width * 10 , y: 440, image: platformsImage}),
+    new Platform({x:blockImage.width * 9 + platformsImage.width * 11 , y: 440, image: platformsImage}),
+    new Platform({x:blockImage.width * 9 + platformsImage.width * 14 , y: 440, image: platformsImage}),
+    new Platform({x:blockImage.width * 9 + platformsImage.width * 17 , y: 440, image: platformsImage}),
+    new Platform({x:blockImage.width * 10 + platformsImage.width * 17 , y: 460, image: platformsImage}),
+    new Platform({x:blockImage.width * 11 + platformsImage.width * 17 + 40 , y: 360, image: platformsImage}),
+    new Platform({x:blockImage.width * 10 + platformsImage.width * 18 + 20 , y: 180, image: platformsImage}),
+    new Platform({x:blockImage.width * 10 + platformsImage.width * 19 + 40 , y: 100, image: platformsImage}),new Platform({x:blockImage.width * 10 + platformsImage.width * 20 + 40 , y: 100, image: platformsImage}),
+    new Platform({x:blockImage.width * 10 + platformsImage.width * 21 + 40 , y: 100, image: platformsImage}),new Platform({x:blockImage.width * 10 + platformsImage.width * 22 + 40 , y: 100, image: platformsImage})
   ]
 
   player = new Player()

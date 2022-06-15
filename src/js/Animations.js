@@ -5,7 +5,8 @@ import {genericObjectLevelOne} from './GenericObject.js'
 import {init} from './Initialization'
 import {platformsLevelOne} from './Platforms'
 
-const PLAYER_SPEED = 5
+// 4.5 default
+const PLAYER_SPEED = 4.5
 
 // Win condition
  export let scrollOffset = 0
@@ -76,6 +77,21 @@ platformsLevelOne.forEach((platform)  => {
 		player.velocity.y = 0
 	}
 })
+
+
+	blockLevelOne.forEach((blocks)  => {
+	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width 
+		) {
+		player.velocity.y = 0
+	}
+})
+
+platformsLevelOne.forEach((platform)  => {
+	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width - 10>= platform.position.x && player.position.x <= platform.position.x - 20 + platform.width) {
+		player.velocity.y = 0
+	}
+})
+
 
 
 
