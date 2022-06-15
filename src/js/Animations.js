@@ -1,11 +1,12 @@
 import {player,keys} from './Player.js'
 import {context,canvas, heightCanvas} from './index.js'
-import {blocks} from './Blocks.js'
-import {genericObject} from './GenericObject.js'
+import {blockLevelOne} from './Blocks.js'
+import {genericObjectLevelOne} from './GenericObject.js'
 import {init} from './Initialization'
-import {platforms} from './Platforms'
+import {platformsLevelOne} from './Platforms'
 
-const PLAYER_SPEED = 5
+// 4.5 default
+let PLAYER_SPEED = 4.5
 
 // Win condition
  export let scrollOffset = 0
@@ -15,17 +16,16 @@ export function animation () {
   requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
-	genericObject.forEach((genericObject) => {
+	genericObjectLevelOne.forEach((genericObject) => {
 		genericObject.draw()
 	})
-	blocks.forEach((blocks) => {
+	blockLevelOne.forEach((blocks) => {
 		blocks.draw()
 	})
-	platforms.forEach((platform) => {
+	platformsLevelOne.forEach((platform) => {
 		platform.draw()
 	})
 
-console.log(scrollOffset)
 	player.update()
 
   if(keys.right.pressed && player.position.x < 400) {
@@ -38,25 +38,25 @@ console.log(scrollOffset)
 
 		if(keys.right.pressed) {
 			scrollOffset += PLAYER_SPEED
-			blocks.forEach((blocks)  => {
+			blockLevelOne.forEach((blocks)  => {
 				blocks.position.x -= PLAYER_SPEED
 			})
-			genericObject.forEach((genericObject) => {
+			genericObjectLevelOne.forEach((genericObject) => {
 				genericObject.position.x -= PLAYER_SPEED * 0.66
 			})
-			platforms.forEach((platform)  => {
+			platformsLevelOne.forEach((platform)  => {
 				platform.position.x -= PLAYER_SPEED
 			})
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
-			blocks.forEach((blocks)  => {
+			blockLevelOne.forEach((blocks)  => {
 				blocks.position.x += PLAYER_SPEED
 			})
-			genericObject.forEach((genericObject) => {
+			genericObjectLevelOne.forEach((genericObject) => {
 				genericObject.position.x += PLAYER_SPEED * 0.66
 			})
-			platforms.forEach((platform)  => {
+			platformsLevelOne.forEach((platform)  => {
 				platform.position.x += PLAYER_SPEED
 			})
 		}
@@ -65,17 +65,45 @@ console.log(scrollOffset)
 
 
 	//Detekcja kolizji
-	blocks.forEach((blocks)  => {
-	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width ) {
-		player.velocity.y = 0
-	}
-})
 
-platforms.forEach((platform)  => {
+platformsLevelOne.forEach((platform)  => {
 	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width - 10>= platform.position.x && player.position.x <= platform.position.x - 20 + platform.width) {
 		player.velocity.y = 0
 	}
 })
+// console.log(player.velocity.y)
+// console.log(player.velocity.x)
+// console.log(player.position.y + player.height)
+
+	blockLevelOne.forEach((blocks)  => {
+	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width 
+		) {
+		player.velocity.y = 0
+	} else if (
+		//Left side collision
+		player.position.y + player.height >= blocks.position.y 
+		&& 
+		player.position.x + player.width >= blocks.position.x
+		&& 
+		player.position.x + player.width <= blocks.position.x + blocks.width
+	) {
+		player.velocity.x = -1
+	}  else if (
+		//Right side collision
+		player.position.y + player.height  >= blocks.position.y 
+		&& 
+		player.position.x + player.width >= blocks.position.x
+		&& 
+		player.position.x <= blocks.position.x + blocks.width
+	) 
+	{
+		player.velocity.x = 1
+	}
+
+})
+
+
+
 
 
 
