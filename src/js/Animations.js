@@ -1,9 +1,9 @@
 import {player,keys} from './Player.js'
 import {context,canvas, heightCanvas} from './index.js'
-import {blocks} from './Blocks.js'
-import {genericObject} from './GenericObject.js'
+import {blockLevelOne} from './Blocks.js'
+import {genericObjectLevelOne} from './GenericObject.js'
 import {init} from './Initialization'
-import {platforms} from './Platforms'
+import {platformsLevelOne} from './Platforms'
 
 const PLAYER_SPEED = 5
 
@@ -15,13 +15,13 @@ export function animation () {
   requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
-	genericObject.forEach((genericObject) => {
+	genericObjectLevelOne.forEach((genericObject) => {
 		genericObject.draw()
 	})
-	blocks.forEach((blocks) => {
+	blockLevelOne.forEach((blocks) => {
 		blocks.draw()
 	})
-	platforms.forEach((platform) => {
+	platformsLevelOne.forEach((platform) => {
 		platform.draw()
 	})
 
@@ -38,25 +38,25 @@ console.log(scrollOffset)
 
 		if(keys.right.pressed) {
 			scrollOffset += PLAYER_SPEED
-			blocks.forEach((blocks)  => {
+			blockLevelOne.forEach((blocks)  => {
 				blocks.position.x -= PLAYER_SPEED
 			})
-			genericObject.forEach((genericObject) => {
+			genericObjectLevelOne.forEach((genericObject) => {
 				genericObject.position.x -= PLAYER_SPEED * 0.66
 			})
-			platforms.forEach((platform)  => {
+			platformsLevelOne.forEach((platform)  => {
 				platform.position.x -= PLAYER_SPEED
 			})
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
-			blocks.forEach((blocks)  => {
+			blockLevelOne.forEach((blocks)  => {
 				blocks.position.x += PLAYER_SPEED
 			})
-			genericObject.forEach((genericObject) => {
+			genericObjectLevelOne.forEach((genericObject) => {
 				genericObject.position.x += PLAYER_SPEED * 0.66
 			})
-			platforms.forEach((platform)  => {
+			platformsLevelOne.forEach((platform)  => {
 				platform.position.x += PLAYER_SPEED
 			})
 		}
@@ -65,13 +65,13 @@ console.log(scrollOffset)
 
 
 	//Detekcja kolizji
-	blocks.forEach((blocks)  => {
+	blockLevelOne.forEach((blocks)  => {
 	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width ) {
 		player.velocity.y = 0
 	}
 })
 
-platforms.forEach((platform)  => {
+platformsLevelOne.forEach((platform)  => {
 	if(player.position.y + player.height <= platform.position.y && player.position.y + player.height + player.velocity.y >= platform.position.y && player.position.x + player.width - 10>= platform.position.x && player.position.x <= platform.position.x - 20 + platform.width) {
 		player.velocity.y = 0
 	}

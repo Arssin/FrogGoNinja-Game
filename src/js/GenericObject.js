@@ -23,20 +23,14 @@ export class GenericObject {
   }
 }
 
-// export let genericObject = [new GenericObject({
-//   x: 0,
-//   y: 0,
-//   image: backGroundImage
-// }), 
-// new GenericObject({
-//   x: 300,
-//   y: 320,
-//   image: houseImage,
-// }),
-// new GenericObject({
-//   x: 1200,
-//   y: 320,
-//   image: houseImage,
-// })
-// ];
+export const genericObjectLevelOne = [new GenericObject({
+  x: 0,
+  y: 0,
+  image: backGroundImage
+}), 
+new GenericObject({
+  x: 300,
+  y: 320,
+  image: houseImage,
+})]
 
