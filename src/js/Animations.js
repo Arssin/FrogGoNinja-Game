@@ -71,14 +71,16 @@ platformsLevelOne.forEach((platform)  => {
 		player.velocity.y = 0
 	}
 })
-
-console.log(player.position.y + player.height)
+// console.log(player.velocity.y)
+// console.log(player.velocity.x)
+// console.log(player.position.y + player.height)
 
 	blockLevelOne.forEach((blocks)  => {
 	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width 
 		) {
 		player.velocity.y = 0
 	} else if (
+		//Left side collision
 		player.position.y + player.height >= blocks.position.y 
 		&& 
 		player.position.x + player.width >= blocks.position.x
@@ -86,7 +88,17 @@ console.log(player.position.y + player.height)
 		player.position.x + player.width <= blocks.position.x + blocks.width
 	) {
 		player.velocity.x = -1
-	} 
+	}  else if (
+		//Right side collision
+		player.position.y + player.height  >= blocks.position.y 
+		&& 
+		player.position.x + player.width >= blocks.position.x
+		&& 
+		player.position.x <= blocks.position.x + blocks.width
+	) 
+	{
+		player.velocity.x = 1
+	}
 
 })
 

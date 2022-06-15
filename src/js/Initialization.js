@@ -9,7 +9,7 @@ export function init(){
   
   blockLevelOne = [ 
     new Block({x: -1 ,y: 510, image: blockImage }),
-    new Block({x: -50 , y: 410, image: blockImage}),
+    new Block({x: blockImage.width - 1 , y: 510, image: blockImage}),
     new Block({x: blockImage.width *2 + 100, y: 510, image: blockImage}),
     new Block({x: blockImage.width *3 + 300, y: 510, image: blockImage}),
     new Block({x: blockImage.width *6 , y: 510, image: blockImage}),
@@ -17,7 +17,11 @@ export function init(){
     new Block({x: blockImage.width * 18 , y: 510, image: blockImage}),
     new Block({x: blockImage.width * 19 , y: 460, image: blockImage}),
     new Block({x: blockImage.width * 20 , y: 420, image: blockImage}),
-    new Block({x: blockImage.width * 22 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 22 - 50 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 23 - 50 , y: 380, image: blockImage}),
+    new Block({x: blockImage.width * 24 - 50 , y: 340, image: blockImage}),
+    new Block({x: blockImage.width * 25 - 50 , y: 380, image: blockImage}),
+    new Block({x: blockImage.width * 26 - 50 , y: 420, image: blockImage}),
   
   ]
 
