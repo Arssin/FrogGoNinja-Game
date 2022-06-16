@@ -144,7 +144,9 @@ highBlockLevelOne.forEach((highBlock)  => {
 
 //Add win condition
 if (scrollOffset > 13860) {
-console.log('its a win') }
+PLAYER_SPEED = 0
+console.log('its a win')
+ }
 
 
 // Lose condition
