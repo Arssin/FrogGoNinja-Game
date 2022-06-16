@@ -4,6 +4,7 @@ import { genericObjectLevelOne, GenericObject, backGroundImage, houseImage } fro
 import { scrollOffset } from './Animations'
 import {platformsLevelOne,Platform, platformsImage} from './Platforms'
 import {HighBlock, highBlockImage, highBlockLevelOne} from './HighBlocks'
+import {PLAYER_SPEED} from './Animations'
 
 
 export function init(){
@@ -55,6 +56,7 @@ export function init(){
   ]
 
   player = new Player()
+  PLAYER_SPEED = 4.5
 
   scrollOffset = 0
 

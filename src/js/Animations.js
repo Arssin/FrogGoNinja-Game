@@ -7,7 +7,7 @@ import {platformsLevelOne} from './Platforms'
 import {highBlockLevelOne} from './HighBlocks'
 
 // 4.5 default
-let PLAYER_SPEED = 4.5
+export let PLAYER_SPEED = 4.5
 
 // Win condition
  export let scrollOffset = 0
@@ -142,10 +142,13 @@ highBlockLevelOne.forEach((highBlock)  => {
 
 // console.log(scrollOffset)
 
+ const winModal = document.querySelector('.winModal')
+
 //Add win condition
 if (scrollOffset > 13860) {
 PLAYER_SPEED = 0
 console.log('its a win')
+
  }
 
 
