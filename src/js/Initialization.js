@@ -3,6 +3,7 @@ import {player, Player} from './Player'
 import { genericObjectLevelOne, GenericObject, backGroundImage, houseImage } from './GenericObject'
 import { scrollOffset } from './Animations'
 import {platformsLevelOne,Platform, platformsImage} from './Platforms'
+import {HighBlock, highBlockImage, highBlockLevelOne} from './HighBlocks'
 
 
 export function init(){
@@ -18,10 +19,17 @@ export function init(){
     new Block({x: blockImage.width * 19 , y: 460, image: blockImage}),
     new Block({x: blockImage.width * 20 , y: 420, image: blockImage}),
     new Block({x: blockImage.width * 22 - 50 , y: 420, image: blockImage}),
-    new Block({x: blockImage.width * 23 - 50 , y: 380, image: blockImage}),
-    new Block({x: blockImage.width * 24 - 50 , y: 340, image: blockImage}),
-    new Block({x: blockImage.width * 25 - 50 , y: 380, image: blockImage}),
     new Block({x: blockImage.width * 26 - 50 , y: 420, image: blockImage}),
+  
+  ]
+
+  highBlockLevelOne = [
+   
+    new HighBlock({x: blockImage.width * 27 - 50, y: 320, image: highBlockImage}),
+    new HighBlock({x: blockImage.width * 27 - 50 + highBlockImage.width, y: 250, image: highBlockImage}),
+    new HighBlock({x: blockImage.width * 27 - 50 + highBlockImage.width * 2, y: 250, image: highBlockImage}),
+    new HighBlock({x: blockImage.width * 27 - 50 + highBlockImage.width * 3, y: 300, image: highBlockImage}),
+    new HighBlock({x: blockImage.width * 27 - 50 + highBlockImage.width * 4, y: 250, image: highBlockImage}),
   
   ]
 

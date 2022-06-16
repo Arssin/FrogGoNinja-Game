@@ -4,9 +4,10 @@ import {blockLevelOne} from './Blocks.js'
 import {genericObjectLevelOne} from './GenericObject.js'
 import {init} from './Initialization'
 import {platformsLevelOne} from './Platforms'
+import {highBlockLevelOne} from './HighBlocks'
 
 // 4.5 default
-let PLAYER_SPEED = 4.5
+let PLAYER_SPEED = 14.5
 
 // Win condition
  export let scrollOffset = 0
@@ -21,6 +22,9 @@ export function animation () {
 	})
 	blockLevelOne.forEach((blocks) => {
 		blocks.draw()
+	})
+	highBlockLevelOne.forEach((highBlock) => {
+		highBlock.draw()
 	})
 	platformsLevelOne.forEach((platform) => {
 		platform.draw()
@@ -47,6 +51,9 @@ export function animation () {
 			platformsLevelOne.forEach((platform)  => {
 				platform.position.x -= PLAYER_SPEED
 			})
+			highBlockLevelOne.forEach((highBlock) => {
+				highBlock.position.x -= PLAYER_SPEED
+			})
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
@@ -58,6 +65,9 @@ export function animation () {
 			})
 			platformsLevelOne.forEach((platform)  => {
 				platform.position.x += PLAYER_SPEED
+			})
+			highBlockLevelOne.forEach((highBlock) => {
+				highBlock.position.x += PLAYER_SPEED
 			})
 		}
 	}
