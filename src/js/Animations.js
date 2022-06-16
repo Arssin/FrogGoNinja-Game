@@ -7,7 +7,7 @@ import {platformsLevelOne} from './Platforms'
 import {highBlockLevelOne} from './HighBlocks'
 
 // 4.5 default
-let PLAYER_SPEED = 14.5
+let PLAYER_SPEED = 4.5
 
 // Win condition
  export let scrollOffset = 0
@@ -113,12 +113,37 @@ platformsLevelOne.forEach((platform)  => {
 })
 
 
+highBlockLevelOne.forEach((highBlock)  => {
+	if(player.position.y + player.height <= highBlock.position.y && player.position.y + player.height + player.velocity.y >= highBlock.position.y && player.position.x + player.width - 10 >= highBlock.position.x  && player.position.x  <= highBlock.position.x - 10 + highBlock.width 
+		) {
+		player.velocity.y = 0
+	} else if (
+		//Left side collision
+		player.position.y + player.height >= highBlock.position.y 
+		&& 
+		player.position.x + player.width >= highBlock.position.x
+		&& 
+		player.position.x + player.width <= highBlock.position.x + highBlock.width
+	) {
+		player.velocity.x = -1
+	}  else if (
+		//Right side collision
+		player.position.y + player.height  >= highBlock.position.y 
+		&& 
+		player.position.x + player.width >= highBlock.position.x
+		&& 
+		player.position.x <= highBlock.position.x + highBlock.width
+	) 
+	{
+		player.velocity.x = 1
+	}
 
+})
 
-
+// console.log(scrollOffset)
 
 //Add win condition
-if (scrollOffset > 13000) {
+if (scrollOffset > 13860) {
 console.log('its a win') }
 
 
