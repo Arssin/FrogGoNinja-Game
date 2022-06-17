@@ -32,21 +32,27 @@
 
 .winModal {
   display: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   position: absolute;
-  background-color: yellow;
-  height: 500px;
-  width: 400px;
-  top: 0;
+  background-color: rgb(90, 177, 148);
+  height: 50%;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-
 
 </style>
 </head>
 <body>
   <div class="container">
     <canvas id="canvas"></canvas>
-    <div class="winModal">This is Modal</div>
+    <div class="winModal">Level completed! Congratulations!
+      <button className="nextLvlBtn">Next level!</button>
+    </div>
     <button class="restartBtn">Restart game</button>
   </div>
 </body>

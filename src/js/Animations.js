@@ -148,7 +148,7 @@ highBlockLevelOne.forEach((highBlock)  => {
 if (scrollOffset > 13860) {
 PLAYER_SPEED = 0
 console.log('its a win')
-winModal.style.display = 'block'
+winModal.style.display = 'flex'
 
  }
 
