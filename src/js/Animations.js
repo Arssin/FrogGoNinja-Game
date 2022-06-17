@@ -10,7 +10,7 @@ import {LEVEL} from './index'
 import {miniBlocks} from './MiniBlock'
 
 // 4.5 default
-export let PLAYER_SPEED = 8
+export let PLAYER_SPEED = 9
 
 // Win condition
 

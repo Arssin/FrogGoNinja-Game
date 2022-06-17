@@ -11,7 +11,7 @@ const winModal = document.querySelector('.winModal')
 
 export function levelTwo(){
 
-  PLAYER_SPEED = 8
+  PLAYER_SPEED = 9
   winModal.style.display = 'none'
   scrollOffset = 0
 
