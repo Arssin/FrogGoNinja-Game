@@ -23,7 +23,8 @@ export class HighBlock {
 }
 
 //Level 1
-export const highBlockLevelOne = [
-  new HighBlock({x: blockImage.width * 26, y: 200, image: highBlockImage}),
-  new HighBlock({x: blockImage.width * 26, y: 400, image: highBlockImage}),
-]
+export const highBlocks = []
+
+
+// new HighBlock({x: blockImage.width * 26, y: 200, image: highBlockImage}),
+// new HighBlock({x: blockImage.width * 26, y: 400, image: highBlockImage}),

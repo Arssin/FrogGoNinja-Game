@@ -1,16 +1,19 @@
-import {blockLevelOne,Block, blockImage} from './Blocks'
+import {blocks,Block, blockImage} from './Blocks'
 import {player, Player} from './Player'
-import { genericObjectLevelOne, GenericObject, backGroundImage, houseImage } from './GenericObject'
+import { genericObject, GenericObject, backGroundImage, houseImage } from './GenericObject'
 import { scrollOffset } from './Animations'
-import {platformsLevelOne,Platform, platformsImage} from './Platforms'
-import {HighBlock, highBlockImage, highBlockLevelOne} from './HighBlocks'
-import {PLAYER_SPEED} from './Animations'
+import {platforms,Platform, platformsImage} from './Platforms'
+import {HighBlock, highBlockImage, highBlocks} from './HighBlocks'
+import { PLAYER_SPEED } from './Animations'
+
 
 const winModal = document.querySelector('.winModal')
 
 export function init(){
+  PLAYER_SPEED = 4.5
+  winModal.style.display = 'none'
   
-  blockLevelOne = [ 
+  blocks = [ 
     new Block({x: -1 ,y: 510, image: blockImage }),
     new Block({x: blockImage.width - 1 , y: 510, image: blockImage}),
     new Block({x: blockImage.width *2 + 100, y: 510, image: blockImage}),
@@ -26,7 +29,7 @@ export function init(){
   
   ]
 
-  highBlockLevelOne = [
+  highBlocks = [
     new HighBlock({x: blockImage.width * 22 + 150 + highBlockImage.width * 4, y: 220, image: highBlockImage}),
     new HighBlock({x: blockImage.width * 27 - 50, y: 320, image: highBlockImage}),
     new HighBlock({x: blockImage.width * 27 - 50 + highBlockImage.width, y: 250, image: highBlockImage}),
@@ -37,7 +40,7 @@ export function init(){
   ]
 
 
-  platformsLevelOne = [
+  platforms = [
     new Platform({x:blockImage.width *5, y: 340, image: platformsImage}),
     new Platform({x:blockImage.width * 5 + platformsImage.width , y: 340, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width , y: 340, image: platformsImage}),
@@ -57,11 +60,10 @@ export function init(){
   ]
 
   player = new Player()
-  PLAYER_SPEED = 14.5
-  winModal.style.display = 'none'
   scrollOffset = 0
 
-  genericObjectLevelOne = [new GenericObject({
+
+  genericObject = [new GenericObject({
   x: 0,
   y: 0,
   image: backGroundImage
