@@ -19,10 +19,12 @@ export let LEVEL = Number
 console.log(localStorage.getItem('LEVEL1_COMPLETE'))
 
 if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
+
  window.onload = () => {
   levelTwo()
   animation()
   LEVEL = 2
+
  }
 } else {
   window.onload = () => {
@@ -30,6 +32,7 @@ if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
     animation() 
     LEVEL = 1
   }
+ 
 }
 
 
@@ -45,8 +48,8 @@ restart.addEventListener('click', () => {
 const nextLvlBtn = document.getElementById('nextLvlBtn')
 
 nextLvlBtn.addEventListener('click', () => {
-  document.location.reload()
-  levelTwo()
+ window.location.reload()
+levelTwo()
 }
 )
 
