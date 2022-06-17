@@ -9,7 +9,7 @@ import { levelTwo } from './LevelTwo.js'
 import {LEVEL} from './index'
 
 // 4.5 default
-export let PLAYER_SPEED = 14.5
+export let PLAYER_SPEED = 4.5
 
 // Win condition
 
