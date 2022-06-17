@@ -1,11 +1,11 @@
-import highBlock from '../images/highBlock.png';
+import miniBlock from '../images/miniBlock.png';
 import {context} from './index.js'
 import {createImage} from './CreateImage'
 
 
-export let highBlockImage = createImage(highBlock)
+export let miniBlockImage = createImage(miniBlock)
 
-export class HighBlock {
+export class MiniBlock {
   constructor({x,y, image}){
     this.position = {
       x: x,
@@ -23,5 +23,5 @@ export class HighBlock {
 }
 
 //Level 1
-export const highBlocks = []
+export const miniBlocks = []
 
