@@ -23,12 +23,14 @@ export function levelTwo(){
     new Block({x:blockImage.width * 14 + 270 ,y: 450, image: blockImage }),
     new Block({x:blockImage.width * 16  ,y: 450, image: blockImage }),
     new Block({x:blockImage.width * 25  ,y: 450, image: blockImage }),
+    new Block({x:blockImage.width * 28  ,y: 450, image: blockImage }),
+    new Block({x:blockImage.width * 29  ,y: 450, image: blockImage }),
     
   ]
 
   highBlocks = [
     new HighBlock({x:blockImage.width * 26  ,y: 400, image: highBlockImage }),
-    new HighBlock({x:blockImage.width * 27 + highBlockImage.width - 100  ,y: 400, image: highBlockImage }),
+    new HighBlock({x:blockImage.width * 27 + highBlockImage.width,y: 400, image: highBlockImage }),
   ]
 
   platforms = [
@@ -41,7 +43,9 @@ export function levelTwo(){
     new Platform({x:blockImage.width * 17 + platformsImage.width * 2 ,y: 540, image: platformsImage }),
     new Platform({x:blockImage.width * 17 + platformsImage.width * 4 ,y: 540, image: platformsImage }),
     new Platform({x:blockImage.width * 17 + platformsImage.width * 6 ,y: 540, image: platformsImage }),
-    new Platform({x:blockImage.width * 27 + platformsImage.width,y: 400, image: platformsImage }),
+    new Platform({x:blockImage.width * 26 + platformsImage.width * 1.5,y: 400, image: platformsImage }),
+    new Platform({x:blockImage.width * 26 + platformsImage.width * 2.5,y: 400, image: platformsImage }),
+    new Platform({x:blockImage.width * 26 + platformsImage.width * 3.5,y: 400, image: platformsImage }),
   ]
  
   miniBlocks = [
