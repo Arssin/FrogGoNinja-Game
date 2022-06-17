@@ -1,7 +1,5 @@
-import {player} from './Player.js'
 import {animation} from './Animations.js'
 import {init} from './Initialization'
-import { LEVEL1_COMPLETE } from './Animations'
 import { levelTwo } from './LevelTwo.js'
 
 
@@ -25,14 +23,12 @@ if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
   levelTwo()
   animation()
   LEVEL = 2
-  console.log(LEVEL)
  }
 } else {
   window.onload = () => {
     init()
     animation() 
     LEVEL = 1
-    console.log(LEVEL)
   }
 }
 
@@ -46,10 +42,7 @@ restart.addEventListener('click', () => {
   document.location.reload()
 })
 
-
 const nextLvlBtn = document.getElementById('nextLvlBtn')
-console.log(nextLvlBtn)
-// console.log(LEVEL1_COMPLETE)
 
 nextLvlBtn.addEventListener('click', () => {
   document.location.reload()
