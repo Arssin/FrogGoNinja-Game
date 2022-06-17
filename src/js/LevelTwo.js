@@ -4,6 +4,7 @@ import { scrollOffset } from './Animations'
 import {PLAYER_SPEED} from './Animations'
 import {platforms,Platform, platformsImage} from './Platforms'
 import { genericObject,GenericObject,backGroundImage } from './GenericObject'
+import {miniBlocks, miniBlockImage, MiniBlock} from './MiniBlock'
 
 const winModal = document.querySelector('.winModal')
 
@@ -16,6 +17,8 @@ export function levelTwo(){
 
   blocks = [ 
     new Block({x: -1 ,y: 510, image: blockImage }),
+    new Block({x:blockImage.width * 8 ,y: 450, image: blockImage }),
+    new Block({x:blockImage.width * 9 ,y: 450, image: blockImage }),
   ]
 
   platforms = [
@@ -25,6 +28,11 @@ export function levelTwo(){
     new Platform({x:blockImage.width + platformsImage.width * 9, y: 140, image: platformsImage}),
   ]
  
+  miniBlocks = [
+    new MiniBlock({x:blockImage.width * 5, y: 300, image: miniBlockImage}),
+    new MiniBlock({x:blockImage.width * 6, y: 300, image: miniBlockImage}),
+    new MiniBlock({x:blockImage.width * 7, y: 300, image: miniBlockImage}),
+  ]
 
   genericObject = [new GenericObject({
     x: 0,
