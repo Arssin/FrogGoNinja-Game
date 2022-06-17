@@ -1,7 +1,7 @@
 import highBlock from '../images/highBlock.png';
 import {context} from './index.js'
 import {createImage} from './CreateImage'
-import { blockImage } from './Blocks';
+
 
 export let highBlockImage = createImage(highBlock)
 

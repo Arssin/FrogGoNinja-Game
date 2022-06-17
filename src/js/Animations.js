@@ -183,13 +183,18 @@ miniBlocks.forEach((miniBlock) => {
 
 
  const winModal = document.querySelector('.winModal')
+ const levelTwoModal = document.querySelector('.levelTwoEnd')
 
- 
 //Add win condition
-if (scrollOffset >= '13860') {
+if ( LEVEL <= 1 && scrollOffset >= '13860') {
 	localStorage.setItem('LEVEL1_COMPLETE', true)
 	PLAYER_SPEED = 0
 	winModal.style.display = 'flex'}
+
+	if ( LEVEL > 1 && scrollOffset >= '13860') {
+		localStorage.setItem('LEVEL2_COMPLETE', true)
+		PLAYER_SPEED = 0
+		levelTwoModal.style.display = 'flex'}
 
 
 // Lose condition

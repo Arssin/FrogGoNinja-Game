@@ -42,13 +42,22 @@ const restart = document.querySelector('.restartBtn')
 
 restart.addEventListener('click', () => {
   localStorage.removeItem('LEVEL1_COMPLETE')
+  localStorage.removeItem('LEVEL2_COMPLETE')
   document.location.reload()
 })
 
 const nextLvlBtn = document.getElementById('nextLvlBtn')
+const nextLvlBtnTwo = document.getElementById('nextLvlBtnTwo')
+
 nextLvlBtn.addEventListener('click', () => {
- window.location.reload()
+window.location.reload()
 levelTwo()
 }
 )
 
+nextLvlBtnTwo.addEventListener('click', () => {
+  window.location.reload()
+  levelTwo()
+  }
+  )
+  
