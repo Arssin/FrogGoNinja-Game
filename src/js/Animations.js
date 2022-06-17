@@ -148,6 +148,7 @@ highBlockLevelOne.forEach((highBlock)  => {
 if (scrollOffset > 13860) {
 PLAYER_SPEED = 0
 console.log('its a win')
+winModal.style.display = 'block'
 
  }
 
@@ -156,6 +157,7 @@ console.log('its a win')
 if(player.position.y > heightCanvas ) {
 	console.log('you lose')
 	init()
+	
 }
 }
 

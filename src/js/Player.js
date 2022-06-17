@@ -7,7 +7,7 @@ canv.width = window.innerWidth
 canv.height = window.innerHeight
 
 //default 0.2
-const GRAVITY = 0.2
+const GRAVITY = 0
 let count = 0
 let frameIndex = 0
 

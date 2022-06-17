@@ -6,6 +6,7 @@ import {platformsLevelOne,Platform, platformsImage} from './Platforms'
 import {HighBlock, highBlockImage, highBlockLevelOne} from './HighBlocks'
 import {PLAYER_SPEED} from './Animations'
 
+const winModal = document.querySelector('.winModal')
 
 export function init(){
   
@@ -56,8 +57,8 @@ export function init(){
   ]
 
   player = new Player()
-  PLAYER_SPEED = 4.5
-
+  PLAYER_SPEED = 14.5
+  winModal.style.display = 'none'
   scrollOffset = 0
 
   genericObjectLevelOne = [new GenericObject({
