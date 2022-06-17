@@ -85,9 +85,7 @@ export function animation () {
 		player.velocity.y = 0
 	}
 })
-// console.log(player.velocity.y)
-// console.log(player.velocity.x)
-// console.log(player.position.y + player.height)
+
 
 blocks.forEach((blocks)  => {
 	if(player.position.y + player.height <= blocks.position.y && player.position.y + player.height + player.velocity.y >= blocks.position.y && player.position.x + player.width - 10 >= blocks.position.x  && player.position.x  <= blocks.position.x - 10 + blocks.width 
@@ -144,7 +142,6 @@ highBlocks.forEach((highBlock)  => {
 
 })
 
-// console.log(scrollOffset)
 
 
  const winModal = document.querySelector('.winModal')

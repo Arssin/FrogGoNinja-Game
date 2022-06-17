@@ -1,9 +1,6 @@
 import {blocks,Block, blockImage} from './Blocks'
 import {player, Player} from './Player'
-import { genericObjectLevelOne, GenericObject, backGroundImage, houseImage } from './GenericObject'
 import { scrollOffset } from './Animations'
-import {platformsLevelTwo,Platform, platformsImage} from './Platforms'
-import {HighBlock, highBlockImage, highBlockLevelOne} from './HighBlocks'
 import {PLAYER_SPEED} from './Animations'
 
 const winModal = document.querySelector('.winModal')
