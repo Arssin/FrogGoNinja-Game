@@ -46,7 +46,6 @@ restart.addEventListener('click', () => {
 })
 
 const nextLvlBtn = document.getElementById('nextLvlBtn')
-
 nextLvlBtn.addEventListener('click', () => {
  window.location.reload()
 levelTwo()
