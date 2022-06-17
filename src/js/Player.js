@@ -101,25 +101,21 @@ window.addEventListener('keydown', ({key}) => {
     case 'ArrowLeft':
     case 'A':
     case 'a': {
-      console.log('left')
       keys.left.pressed = true
       break;
     }
     case 'ArrowRight':
     case 'D':
     case 'd': {
-      console.log('right')
       keys.right.pressed = true
       break;
     }
     case 'ArrowUp':
     case 'W':
     case 'w' : {
-      console.log('up')
       if(keys.up.pressed === false && player.jump === false && player.velocity.y === 0){
         player.jump = true
         player.velocity.y -= 10
-        console.log(player.jump)
       }
       break;
     }
@@ -134,21 +130,18 @@ window.addEventListener('keyup', ({key}) => {
     case 'ArrowLeft':
     case 'A':
     case 'a': {
-      console.log('left')
       keys.left.pressed = false
       break;
     }
     case 'ArrowRight':
     case 'D':
     case 'd': {
-      console.log('right')
       keys.right.pressed = false
       break;
     }
     case 'ArrowUp':
     case 'W':
     case 'w' : {
-      console.log('up')
       player.jump = false
       break;
     }

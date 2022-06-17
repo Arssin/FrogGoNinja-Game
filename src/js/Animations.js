@@ -7,6 +7,7 @@ import {platforms} from './Platforms'
 import {highBlocks} from './HighBlocks'
 import { levelTwo } from './LevelTwo.js'
 import {LEVEL} from './index'
+import {miniBlocks} from './MiniBlock'
 
 // 4.5 default
 export let PLAYER_SPEED = 4.5
@@ -33,6 +34,9 @@ export function animation () {
 	platforms.forEach((platform) => {
 		platform.draw()
 	})
+	miniBlocks.forEach((miniBlock) => {
+		miniBlock.draw()
+	})
 
 	player.update()
 
@@ -58,6 +62,9 @@ export function animation () {
 			highBlocks.forEach((highBlock) => {
 				highBlock.position.x -= PLAYER_SPEED
 			})
+			miniBlocks.forEach((miniBlock) => {
+				miniBlock.position.x -= PLAYER_SPEED
+			})
 		
 		} else if(keys.left.pressed && scrollOffset > 0) {
 			scrollOffset -= PLAYER_SPEED
@@ -72,6 +79,9 @@ export function animation () {
 			})
 			highBlocks.forEach((highBlock) => {
 				highBlock.position.x += PLAYER_SPEED
+			})
+			miniBlocks.forEach((miniBlock) => {
+				miniBlock.position.x += PLAYER_SPEED
 			})
 		}
 	}
@@ -143,15 +153,48 @@ highBlocks.forEach((highBlock)  => {
 })
 
 
+miniBlocks.forEach((miniBlock) => {
+	if(player.position.y + player.height <= miniBlock.position.y && player.position.y + player.height + player.velocity.y >= miniBlock.position.y && player.position.x + player.width - 10 >= miniBlock.position.x  && player.position.x  <= miniBlock.position.x - 10 + miniBlock.width 
+		) {
+		player.velocity.y = 0
+	} else if (
+		//Left side collision
+		player.position.y + player.height >= miniBlock.position.y 
+		&& 
+		player.position.x + player.width >= miniBlock.position.x
+		&& 
+		player.position.x + player.width <= miniBlock.position.x + miniBlock.width
+	) {
+		player.velocity.x = -1
+	}  else if (
+		//Right side collision
+		player.position.y + player.height  >= miniBlock.position.y 
+		&& 
+		player.position.x + player.width >= miniBlock.position.x
+		&& 
+		player.position.x <= miniBlock.position.x + miniBlock.width
+	) 
+	{
+		player.velocity.x = 1
+	}
+
+})
+
+
 
  const winModal = document.querySelector('.winModal')
+ const levelTwoModal = document.querySelector('.levelTwoEnd')
 
- 
 //Add win condition
-if (scrollOffset >= '13860') {
+if ( LEVEL <= 1 && scrollOffset >= '13860') {
 	localStorage.setItem('LEVEL1_COMPLETE', true)
 	PLAYER_SPEED = 0
 	winModal.style.display = 'flex'}
+
+	if ( LEVEL > 1 && scrollOffset >= '13860') {
+		localStorage.setItem('LEVEL2_COMPLETE', true)
+		PLAYER_SPEED = 0
+		levelTwoModal.style.display = 'flex'}
 
 
 // Lose condition
