@@ -21,7 +21,6 @@ export let scrollOffset = 0
 export function animation () {
 //  let PLAYER_SPEED = 4.5
   requestAnimationFrame(animation)
-	console.log(requestAnimationFrame)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
 	genericObject.forEach((genericObject) => {
