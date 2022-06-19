@@ -7,7 +7,7 @@ canv.width = window.innerWidth
 canv.height = window.innerHeight
 
 //default 0.2
-const GRAVITY = 0.3
+// const GRAVITY = 0.2
 let count = 0
 let frameIndex = 0
 
@@ -29,6 +29,7 @@ export class Player {
   this.frameWidth = 32
   this.frameHeight = 32
   this.jump = false
+  this.gravity = 0.2
 
 }
 
@@ -44,6 +45,7 @@ draw(){
     this.position.y,
     this.width, 
     this.height
+
     )
     // c.fillStyle = 'blue'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
@@ -62,11 +64,12 @@ update(){
   this.draw()
   this.position.y += this.velocity.y
   this.position.x += this.velocity.x
+
   
   
   //Grawitacja działa jeżeli jest w oknie canvasa
   if(this.position.y + this.height + this.velocity.y <= canv.height ){
-  this.velocity.y += GRAVITY 
+  this.velocity.y += this.gravity
 } 
  }
 }

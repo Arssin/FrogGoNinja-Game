@@ -10,8 +10,8 @@ import {LEVEL} from './index'
 import {miniBlocks} from './MiniBlock'
 
 // 4.5 default
-export let PLAYER_SPEED = 9
 
+export let PLAYER_SPEED = 4.5
 // Win condition
 
 export let scrollOffset = 0
@@ -19,6 +19,7 @@ export let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
+//  let PLAYER_SPEED = 4.5
   requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
