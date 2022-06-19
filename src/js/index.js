@@ -61,3 +61,6 @@ nextLvlBtnTwo.addEventListener('click', () => {
   }
   )
   
+
+  canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
+  
