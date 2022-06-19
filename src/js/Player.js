@@ -11,11 +11,6 @@ canv.height = window.innerHeight
 let count = 0
 let frameIndex = 0
 
-canv.toBlob(function(blob) { 
-  const item = new ClipboardItem({ "image/png": blob });
-  navigator.clipboard.write([item]); 
-});
-
 export const spriteImageStandRight = createImage(spriteStandRight) 
 
 export class Player {

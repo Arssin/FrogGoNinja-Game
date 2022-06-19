@@ -61,6 +61,9 @@ nextLvlBtnTwo.addEventListener('click', () => {
   }
   )
   
-
-  canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
+  canvas.toBlob(function(blob) { 
+    const item = new ClipboardItem({ "image/png": blob });
+    navigator.clipboard.write([item]);
+    alert("Copied! paste it on paint");
+  });
   
