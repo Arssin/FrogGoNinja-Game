@@ -1,5 +1,6 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const NetlifyPlugin = require('netlify-webpack-plugin')
 
 
 module.exports = {
@@ -56,7 +57,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html'
-    })
+    }),
+    new NetlifyPlugin({ 
+      headers: {
+      '/templates/index.html': {
+        'X-Frame-Options': 'SAMEORIGIN',
+        'X-XSS-Protection': [1, { mode: 'block' }]
+      }
+    }})
   ],
   watch: true,
   devtool: 'source-map' }
