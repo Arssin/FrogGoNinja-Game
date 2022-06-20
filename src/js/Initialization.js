@@ -63,17 +63,17 @@ export function init(){
   scrollOffset = 0
 
 
-  genericObject = [new GenericObject({
-  x: 0,
-  y: 0,
-  image: backGroundImage
-}), 
-new GenericObject({
-  x: 300,
-  y: 320,
-  image: houseImage,
-}),
+//   genericObject = [new GenericObject({
+//   x: 0,
+//   y: 0,
+//   image: backGroundImage
+// }), 
+// new GenericObject({
+//   x: 300,
+//   y: 320,
+//   image: houseImage,
+// }),
 
-];
+// ];
 
 }
