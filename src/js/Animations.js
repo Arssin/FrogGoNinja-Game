@@ -19,7 +19,6 @@ export let scrollOffset = 0
 
 // Animacja Grawitacji
 export function animation () {
-//  let PLAYER_SPEED = 4.5
   window.requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
