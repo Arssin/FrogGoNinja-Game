@@ -18,22 +18,29 @@ export let LEVEL = Number
 
 console.log(localStorage.getItem('LEVEL1_COMPLETE'))
 
-if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
 
- window.onload = () => {
-  levelTwo()
-  animation()
-  LEVEL = 2
+animation()
+init()
 
- }
-} else {
-  window.onload = () => {
-    init()
-    animation() 
-    LEVEL = 1
-  }
+// if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
+
+
+
+
+//  window.onload = () => {
+//   levelTwo()
+//   animation()
+//   LEVEL = 2
+
+//  }
+// } else {
+//   window.onload = () => {
+//     init()
+//     animation() 
+//     LEVEL = 1
+//   }
  
-}
+// }
 
 
 /// Other Functions
