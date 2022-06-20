@@ -7,7 +7,6 @@ canv.width = window.innerWidth
 canv.height = window.innerHeight
 
 //default 0.2
-// const GRAVITY = 0.2
 let count = 0
 let frameIndex = 0
 
@@ -29,7 +28,9 @@ export class Player {
   this.frameWidth = 32
   this.frameHeight = 32
   this.jump = false
+  // Deafult 0.35
   this.gravity = 0.35
+ 
 
 }
 
