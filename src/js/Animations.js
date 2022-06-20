@@ -20,12 +20,12 @@ export let scrollOffset = 0
 // Animacja Grawitacji
 export function animation () {
 //  let PLAYER_SPEED = 4.5
-  requestAnimationFrame(animation)
+  window.requestAnimationFrame(animation)
 	context.fillStyle = 'white'
   context.fillRect(0, 0, canvas.width, canvas.height)
-	genericObject.forEach((genericObject) => {
-		genericObject.draw()
-	})
+	// genericObject.forEach((genericObject) => {
+	// 	genericObject.draw()
+	// })
 	blocks.forEach((blocks) => {
 		blocks.draw()
 	})
