@@ -51,7 +51,7 @@ draw(){
 //Update pozycji gracza
 update(){
   count ++
-  if(count > 8) {
+  if(count > 4) {
     frameIndex ++;
     count = 0
   }

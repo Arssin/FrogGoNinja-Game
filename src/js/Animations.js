@@ -9,10 +9,10 @@ import { levelTwo } from './LevelTwo.js'
 import {LEVEL} from './index'
 import {miniBlocks} from './MiniBlock'
 
-// 6 default
+// 7 default
 
-export let PLAYER_SPEED = 6
-// Win condition
+export let PLAYER_SPEED = 7
+
 
 export let scrollOffset = 0
 

@@ -10,7 +10,7 @@ import { PLAYER_SPEED } from './Animations'
 const winModal = document.querySelector('.winModal')
 
 export function init(){
-  PLAYER_SPEED = 6
+  PLAYER_SPEED = 7
   winModal.style.display = 'none'
   
   blocks = [ 
