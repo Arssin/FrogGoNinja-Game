@@ -38,7 +38,7 @@ function animation () {
 	miniBlocks.forEach((miniBlock) => {
 		miniBlock.draw()
 	})
-
+  context.fillRect(0, 0, canvas.width, canvas.height)
 	player.update()
 
   if(keys.right.pressed && player.position.x < 400) {
