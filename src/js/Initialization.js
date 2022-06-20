@@ -23,7 +23,7 @@ export function init(){
     new Block({x: blockImage.width * 18 + 200 , y: 510, image: blockImage}),
     new Block({x: blockImage.width * 19 , y: 460, image: blockImage}),
     new Block({x: blockImage.width * 20 , y: 420, image: blockImage}),
-    new Block({x: blockImage.width * 22 - 50 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 22 - 150 , y: 420, image: blockImage}),
     new Block({x: blockImage.width * 26 - 50 , y: 420, image: blockImage}),
     new Block({x: blockImage.width * 30 - 300 , y: 420, image: blockImage}),
   
