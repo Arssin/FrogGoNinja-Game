@@ -29,7 +29,7 @@ export function levelTwo(){
 
   highBlocks = [
     new HighBlock({x:blockImage.width * 26 ,y: 400, image: highBlockImage }),
-    new HighBlock({x:blockImage.width * 27 + highBlockImage.width - 50,y: 400, image: highBlockImage }),
+    new HighBlock({x:blockImage.width * 27 + highBlockImage.width,y: 400, image: highBlockImage }),
   ]
 
   platforms = [

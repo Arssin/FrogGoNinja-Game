@@ -27,6 +27,7 @@ export function init(){
     new Block({x: blockImage.width * 26 - 50 , y: 420, image: blockImage}),
     new Block({x: blockImage.width * 30 - 300 , y: 420, image: blockImage}),
   
+
   ]
 
   highBlocks = [
