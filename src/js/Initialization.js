@@ -10,7 +10,7 @@ import { PLAYER_SPEED } from './Animations'
 const winModal = document.querySelector('.winModal')
 
 export function init(){
-  PLAYER_SPEED = 4.5
+  PLAYER_SPEED = 7
   winModal.style.display = 'none'
   
   blocks = [ 
@@ -23,10 +23,11 @@ export function init(){
     new Block({x: blockImage.width * 18 + 200 , y: 510, image: blockImage}),
     new Block({x: blockImage.width * 19 , y: 460, image: blockImage}),
     new Block({x: blockImage.width * 20 , y: 420, image: blockImage}),
-    new Block({x: blockImage.width * 22 - 50 , y: 420, image: blockImage}),
-    new Block({x: blockImage.width * 26 - 50 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 22 - 150 , y: 420, image: blockImage}),
+    new Block({x: blockImage.width * 26 - 150 , y: 420, image: blockImage}),
     new Block({x: blockImage.width * 30 - 300 , y: 420, image: blockImage}),
   
+
   ]
 
   highBlocks = [
@@ -41,9 +42,9 @@ export function init(){
 
 
   platforms = [
-    new Platform({x:blockImage.width *5, y: 340, image: platformsImage}),
-    new Platform({x:blockImage.width * 5 + platformsImage.width , y: 340, image: platformsImage}),
-    new Platform({x:blockImage.width * 7 + platformsImage.width , y: 340, image: platformsImage}),
+    new Platform({x:blockImage.width *5, y: 380, image: platformsImage}),
+    new Platform({x:blockImage.width * 5 + platformsImage.width , y: 380, image: platformsImage}),
+    new Platform({x:blockImage.width * 7 + platformsImage.width , y: 380, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width * 3 , y: 250, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width * 5 , y: 340, image: platformsImage}),
     new Platform({x:blockImage.width * 7 + platformsImage.width * 8 , y: 440, image: platformsImage}),
@@ -52,8 +53,8 @@ export function init(){
     new Platform({x:blockImage.width * 9 + platformsImage.width * 14 , y: 440, image: platformsImage}),
     new Platform({x:blockImage.width * 9 + platformsImage.width * 17 , y: 440, image: platformsImage}),
     new Platform({x:blockImage.width * 10 + platformsImage.width * 17 , y: 460, image: platformsImage}),
-    new Platform({x:blockImage.width * 11 + platformsImage.width * 17 + 40 , y: 360, image: platformsImage}),
-    new Platform({x:blockImage.width * 10 + platformsImage.width * 18 + 20 , y: 180, image: platformsImage}),
+    new Platform({x:blockImage.width * 11 + platformsImage.width * 17 - 100 , y: 360, image: platformsImage}),
+    new Platform({x:blockImage.width * 10 + platformsImage.width * 18 + 20 , y: 220, image: platformsImage}),
     new Platform({x:blockImage.width * 10 + platformsImage.width * 19 + 40 , y: 100, image: platformsImage}),new Platform({x:blockImage.width * 10 + platformsImage.width * 20 + 40 , y: 100, image: platformsImage}),
     new Platform({x:blockImage.width * 10 + platformsImage.width * 21 + 40 , y: 100, image: platformsImage}),new Platform({x:blockImage.width * 10 + platformsImage.width * 22 + 40 , y: 100, image: platformsImage}),
     new Platform({x: blockImage.width * 21 + 170 + highBlockImage.width * 4, y: 320, image: platformsImage}),

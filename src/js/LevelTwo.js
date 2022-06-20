@@ -11,7 +11,7 @@ const winModal = document.querySelector('.winModal')
 
 export function levelTwo(){
 
-  PLAYER_SPEED = 9
+  PLAYER_SPEED = 7
   winModal.style.display = 'none'
   scrollOffset = 0
 
@@ -25,18 +25,17 @@ export function levelTwo(){
     new Block({x:blockImage.width * 25  ,y: 450, image: blockImage }),
     new Block({x:blockImage.width * 28  ,y: 450, image: blockImage }),
     new Block({x:blockImage.width * 29  ,y: 450, image: blockImage }),
-    
   ]
 
   highBlocks = [
-    new HighBlock({x:blockImage.width * 26  ,y: 400, image: highBlockImage }),
+    new HighBlock({x:blockImage.width * 26 ,y: 400, image: highBlockImage }),
     new HighBlock({x:blockImage.width * 27 + highBlockImage.width,y: 400, image: highBlockImage }),
   ]
 
   platforms = [
-    new Platform({x:blockImage.width + platformsImage.width * 2, y: 440, image: platformsImage}),
-    new Platform({x:blockImage.width + platformsImage.width * 5, y: 240, image: platformsImage}),
-    new Platform({x:blockImage.width + platformsImage.width * 8, y: 140, image: platformsImage}),
+    new Platform({x:blockImage.width + platformsImage.width * 2 - 120, y: 440, image: platformsImage}),
+    new Platform({x:blockImage.width + platformsImage.width * 5 - 140, y: 340, image: platformsImage}),
+    new Platform({x:blockImage.width + platformsImage.width * 8 - 150, y: 240, image: platformsImage}),
     new Platform({x:blockImage.width + platformsImage.width * 9, y: 140, image: platformsImage}),
     new Platform({x:blockImage.width * 10 + platformsImage.width * 2 , y: 340, image: platformsImage}),
     new Platform({x:blockImage.width * 11 + platformsImage.width * 4, y: 340, image: platformsImage}),
