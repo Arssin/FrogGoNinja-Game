@@ -1,6 +1,6 @@
 # Hello my name is Mateusz Binięda and this is FrogGoNinja!
 
-I made this project for training pruposes. 
+I made this project for training purposes. 
 </br>
 Always wanted to make a small game, and also i want to see how's HTML Canvas doing.
 </br>
