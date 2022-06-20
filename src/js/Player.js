@@ -29,7 +29,7 @@ export class Player {
   this.frameWidth = 32
   this.frameHeight = 32
   this.jump = false
-  this.gravity = 0.2
+  this.gravity = 0.35
 
 }
 
@@ -47,8 +47,6 @@ draw(){
     this.height
 
     )
-    // c.fillStyle = 'blue'
-    // c.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
 //Update pozycji gracza
 update(){
@@ -69,7 +67,7 @@ update(){
   
   //Grawitacja działa jeżeli jest w oknie canvasa
   if(this.position.y + this.height + this.velocity.y <= canv.height ){
-  this.velocity.y += this.gravity
+  this.velocity.y  += this.gravity  
 } 
  }
 }
