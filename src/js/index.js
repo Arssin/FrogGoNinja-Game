@@ -16,7 +16,6 @@ export const heightCanvas = canvas.height
 
 export let LEVEL = Number
 
-console.log(localStorage.getItem('LEVEL1_COMPLETE'))
 
 if (localStorage.getItem('LEVEL1_COMPLETE') === 'true') {
 
